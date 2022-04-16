@@ -5,13 +5,6 @@ import { useNavigate } from 'react-router';
 
 export default function Profile() {
     const cookies = new Cookies();
-    let curId = cookies.get('cur-id');
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        console.log(curId);
-        if(!curId) navigate("/login");
-    });
 
     return(
         <div>

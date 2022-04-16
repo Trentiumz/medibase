@@ -15,7 +15,7 @@ export default function Homepage(){
                 <a className="navbar-subtitle-text nav-underline" href="/medication">medication</a>
                 <a className="navbar-subtitle-text nav-underline" href="/schedule">schedule</a>
                 <a className="navbar-subtitle-text nav-underline" href="/scan">scan</a>
-                <a className="navbar-subtitle-text nav-underline" href="/login">login</a>
+                <a className="navbar-subtitle-text nav-underline" href="/profile">profile</a>
               </div>
 
             </nav>
