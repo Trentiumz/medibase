@@ -1,8 +1,10 @@
 import React from 'react';
 import TTSIcon from './tts';
 import './home.css';
+import MakeDINRequests from './api-calls/drugDatabase';
 
 export default function Homepage(){
+    MakeDINRequests("00001783");
     return(
         <div>
             <nav id="navbar">

@@ -8,14 +8,14 @@ import Scan from "./add.js";
 import Homepage from "./home.js";
 import translateText from "./api-calls/translateText.js";
 import textToSpeech from './api-calls/textToSpeech';
+import MakeDINRequests from './api-calls/drugDatabase';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-translateText("Hello World!", "zh", (test) =>{
-  setInterval(() => {console.log(test);}, 1000);
-});
+// translateText("Hello World!", "zh", (test) =>{
+//   setInterval(() => {console.log(test);}, 1000);
+// });
 //var test = textToSpeech("Hello World!", "en-us");
 //setInterval(() => {console.log(test);}, 1000);
-
 root.render(
   <Router>
     <Routes>
