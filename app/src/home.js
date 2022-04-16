@@ -1,5 +1,8 @@
 import React from 'react';
 import './home.css';
+import TTSIcon from './tts';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 export default function Homepage(){
     return(
@@ -21,8 +24,11 @@ export default function Homepage(){
                 <p className="feature-text">All your medication at your fingertips.</p>
               </div>
             </div>
-            <div>
+            <div className = "test">
+            Hello World!
+            <TTSIcon text="hello world" lang="en-us"/>
             </div>    
+            <FontAwesomeIcon icon={faCoffee} />
         </div>
     );
 }

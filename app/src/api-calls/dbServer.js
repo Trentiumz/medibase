@@ -22,3 +22,4 @@ export async function getProfile(id) {
     }).catch (error => {console.log(error)});
     
 }
+
