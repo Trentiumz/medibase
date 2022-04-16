@@ -2,16 +2,22 @@ import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
 function LoggedOut(){
-    const [content, setContent] = useState("")
+    const [content, setContent] = useState("00000000")
     const navigate = useNavigate();
 
+    function pad(n) {
+        n = n + '';
+        return n.length >= 8 ? n : new Array(8 - n.length + 1).join('0') + n;
+      }
+
     function onDinChange(event){
+        event.target.value = pad(parseInt(event.target.value));
         if(event.target.value.length <= 8){
             setContent(event.target.value);
         }
     }
 
-    function onSubmit(){
+    function onSubmit() {
         navigate(`/info/${content}`);
     }
 
