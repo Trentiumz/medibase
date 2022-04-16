@@ -8,7 +8,7 @@ const options = {
     src: 'Hello, world!',
     hl: 'en-us',
     r: '0',
-    c: 'mp3',
+    c: 'wav',
     f: '8khz_8bit_mono'
   },
   headers: {
@@ -17,14 +17,14 @@ const options = {
   }
 };
 
-export default function textToSpeech(text, lang) {
-    options.params.src = text;
-    options.params.hl = lang;
-    axios(options)
-        .then(response => {
-        console.log(response);
-        })
-        .catch(error => {
-        console.log(error);
-    });
+export default function textToSpeech(text, lang, then) {
+  options.params.src = text;
+  options.params.hl = lang;
+  axios(options)
+      .then(response => {
+        then(response);
+      })
+      .catch(error => {
+      console.log(error);
+  });
 }
