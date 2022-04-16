@@ -1,0 +1,43 @@
+{
+  "profiles": [
+      {
+          "id" : 1,
+          "name": "Example1",
+          "settings": {
+              "language": "en",
+              "timezone": "UTC",
+              "colorblind": false
+          },
+          "medication" : {
+              "02331640" : {
+                  "name": "XYLOCAINE",
+                  "frequency" : "1",
+                  "frequency_unit" : "day",
+                  "dosage" : "250",
+                  "dosage_unit" : "mg",
+                  "notes": "No more than 600mg/day."
+              }, 
+              "02172151" : {
+                  "NAME" : "SYNTHROID",
+                  "frequency" : "1",
+                  "frequency_unit" : "day",
+                  "dosage" : "1",
+                  "dosage_unit" : "tablet",
+                  "notes" : "Take on an empty stomach."
+              }
+          }
+      },
+      {
+          "id" : 2,
+          "name": "Example2",
+          "settings": {
+              "language": "en",
+              "timezone": "UTC-05:00",
+              "colorblind": true
+          },
+          "medication" : {
+          
+          }
+      }
+  ]
+}
