@@ -7,39 +7,33 @@ const DINRequest = {
 };
 
 export default async function MakeDINRequests(din) {
-    const [ret, setRet] = useState({});
-    function updateRet(key, val) {
-        let tmp = ret;
-        tmp[key] = val;
-        setRet(tmp);
-    }
-
-    updateRet("error", "none");
+    var ret = {"error": "none"};
 
     // get the base information using DIN
     DINRequest.url = `https://health-products.canada.ca/api/drug/drugproduct/?lang=en&type=json&din=${din}`;
     await axios(DINRequest).then(response => {
         if (response.data.length === 0) {
-            updateRet("error", "DIN not found");
+            ret["error"] = "DIN not found";
             return;
         }
-        updateRet("drug_code", response.data[0].drug_code);
-        updateRet("class_name", response.data[0].class_name);
-        updateRet("brand_name", response.data[0].brand_name);
-        updateRet("company_name", response.data[0].company_name);
-        updateRet("descriptor", response.data[0].descriptor);
-        updateRet("number_of_ai", response.data[0].number_of_ais);
+        ret["drug_code"] = response.data[0].drug_code;
+        ret["class_name"] = response.data[0].class_name;
+        ret["company_name"] = response.data[0].company_name;
+        ret["brand_name"] = response.data[0].brand_name;
+        ret["descriptor"] = response.data[0].descriptor;
+        ret["number_of_ai"] = response.data[0].number_of_ai;
+        return ret;
     }).catch (error => {console.log(error)});
 
     // get the dosage form (liquid, ointment, etc.)
     DINRequest.url = `https://health-products.canada.ca/api/drug/form/?lang=en&type=json&id=${ret.drug_code}`;
     await axios(DINRequest).then(response => {
-        updateRet("form", response.data[0].pharmaceutical_form_name);
+        ret["form"] = response.data[0].pharmaceutical_form_name;
     }).catch(error => {console.log(error)});
 
     DINRequest.url = `https://health-products.canada.ca/api/drug/route/?lang=en&type=json&id=${ret.drug_code}`;
     await axios(DINRequest).then(response => {
-        updateRet("route", response.data[0].route_of_administration_name);
+        ret["route"] = response.data[0].route_of_administration_name;
     }).catch(error => {console.log(error)});
 
     // get the active ingredients
@@ -49,7 +43,7 @@ export default async function MakeDINRequests(din) {
             name: el.ingredient_name,
             strength: el.strength + " " + el.strength_unit,
         }})
-        updateRet("ingredients", ingredients);
+        ret["ingredients"] = ingredients;
     }).catch (error => {console.log(error)});
     console.log(ret);
     return ret;

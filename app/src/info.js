@@ -9,18 +9,16 @@ export default function Information(){
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
     if (loading) {
-        setData(MakeDINRequests(din));
-        setLoading(false);
-        console.log(data, loading);
+        MakeDINRequests(din).then(response => {
+            setData(response);
+        }).then(() => setLoading(false));
     }
-    if (!data) {
-        return (<div>Hi</div>);
-    } else {
-        console.log("HI")
-        return(
-            <div>
-                <h1>{data.company_name}</h1>
-            </div>
-        );
-    }
+    return(
+        <>
+        <div style={{display: loading ? "block" : "none"}}>Loading...</div>
+        <div style={{display: !loading ? "block" : "none"}}>
+            {data.company_name}
+        </div>
+        </>
+    );
 }
