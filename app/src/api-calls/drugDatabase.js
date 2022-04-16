@@ -16,6 +16,7 @@ export default async function MakeDINRequests(din) {
             ret["error"] = "DIN not found";
             return;
         }
+        ret["din"] = din;
         ret["drug_code"] = response.data[0].drug_code;
         ret["class_name"] = response.data[0].class_name;
         ret["company_name"] = response.data[0].company_name;

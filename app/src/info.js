@@ -21,9 +21,11 @@ export default function Information(){
         let profile = cookies.get("profile");
         profile.medication.push({
             medication_name: data.brand_name,
+            din: data.din,
             notes: data.descriptor,
             last_date_taken: parseInt(new Date().getDate())
         })
+        cookies.set("profile", profile);
     }
 
     if (!data) {

@@ -26,6 +26,7 @@ function newProfile(){
         medication: []
     }
     
+    // create profile, meds, and info
     cookies.set("profile", profile);
 }
 
