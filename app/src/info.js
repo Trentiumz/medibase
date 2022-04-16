@@ -24,12 +24,4 @@ export default function Information(){
             </div>
         );
     }
-    return(
-        <>
-        <div style={{display: loading ? "block" : "none"}}>Loading...</div>
-        <div style={{display: !loading ? "block" : "none"}}>
-            {data.company_name}
-        </div>
-        </>
-    );
 }
