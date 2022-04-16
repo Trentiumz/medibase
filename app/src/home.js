@@ -23,8 +23,6 @@ export default function Homepage(){
                 <p className="feature-text">All your medication at your fingertips.</p>
               </div>
             </div>        
-            Hello World!
-            <TTSIcon text="Hello World" lang="en-us"/>
         </div>
     );
 }

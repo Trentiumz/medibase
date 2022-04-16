@@ -18,10 +18,12 @@ export default async function MakeDINRequests(din) {
     DINRequest.url = `https://health-products.canada.ca/api/drug/drugproduct/?lang=en&type=json&din=${din}`;
     await axios(DINRequest).then(response => {
         console.log(response);
-        updateRet("drug_code", response.data.drug_code);
-        updateRet("drug_name", response.data.drug_name);
-        updateRet("company_name", response.data.company_name);
-        updateRet("descriptor", response.data.descriptor);
+        updateRet("drug_code", response.data[0].drug_code);
+        updateRet("class_name", response.data[0].class_name);
+        updateRet("brand_name", response.data[0].brand_name);
+        updateRet("company_name", response.data[0].company_name);
+        updateRet("descriptor", response.data[0].descriptor);
+        updateRet("number_of_ai", response.data[0].number_of_ais);
     }).catch (error => {console.log(error)});
 
     // get the active ingredients
