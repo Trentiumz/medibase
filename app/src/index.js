@@ -6,16 +6,9 @@ import Profile from "./profile.js";
 import Information from "./info.js";
 import Scan from "./add.js";
 import Homepage from "./home.js";
-import translateText from "./api-calls/translateText.js";
-import textToSpeech from './api-calls/textToSpeech';
-import MakeDINRequests from './api-calls/drugDatabase';
+import Login from './login.js';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// translateText("Hello World!", "zh", (test) =>{
-//   setInterval(() => {console.log(test);}, 1000);
-// });
-//var test = textToSpeech("Hello World!", "en-us");
-//setInterval(() => {console.log(test);}, 1000);
 root.render(
   <Router>
     <Routes>
@@ -26,6 +19,7 @@ root.render(
       <Route path="/info">
         <Route path=":din" element={<Information />}></Route>
       </Route>
+      <Route path="/login" element={<Login />} />
     </Routes>
   </Router>
 )
