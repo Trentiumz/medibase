@@ -4,7 +4,7 @@ import './index.css';
 import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 import Profile from "./profile.js";
 import Information from "./info.js";
-import Add from "./add.js";
+import Scan from "./add.js";
 import Homepage from "./home.js";
 import translateText from "./api-calls/translateText.js";
 import textToSpeech from './api-calls/textToSpeech';
@@ -20,8 +20,10 @@ root.render(
       <Route path="/" element={<Homepage />}>
       </Route>
       <Route path="/profile" element={<Profile />}></Route>
-      <Route path="/add" element={<Add />}></Route>
-      <Route path="/info" element={<Information />}></Route>
+      <Route path="/scan" element={<Scan />}></Route>
+      <Route path="/info">
+        <Route path=":din" element={<Information />}></Route>
+      </Route>
     </Routes>
   </Router>
 )
