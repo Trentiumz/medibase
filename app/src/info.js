@@ -1,6 +1,6 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import MakeDINRequests from './api-calls/drugDatabase';
 
 
@@ -15,12 +15,20 @@ export default function Information(){
         setLoading(false);
     }
     if (!data) {
-        return (<div>Hi</div>);
+        return (<div>Loading...</div>);
     } else {
-        console.log("HI")
         return(
             <div>
-                <h1>{data.company_name}</h1>
+                <div>{data.brand_name}</div>
+                <div>{data.company_name}</div>
+                <div>Active Ingredients</div>
+                {data.ingredients.map((el, key) => {
+                    return(
+                        <div key={key}>{el.name} {el.strength}</div>
+                    )
+                })}
+                <div>Dosage Form: {data.form}</div>
+                <div>Route of Administration: {data.route}</div>
             </div>
         );
     }
