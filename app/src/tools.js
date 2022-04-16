@@ -1,11 +1,11 @@
 import Cookies from "universal-cookie"
 
 export default function newProfile(){
-    const cookies = Cookies();
+    const cookies = new Cookies();
 
     const profile = {
-        name: "",
-        colorblind: true,
+        name: "Example1",
+        colorblind: false,
         language: "en-us",
         medication: []
     }
