@@ -14,7 +14,9 @@ root.render(
       <Route path="/" element={<Homepage />}></Route>
       <Route path="/profile" element={<Profile />}></Route>
       <Route path="/scan" element={<Scan />}></Route>
-      <Route path="/info" element={<Information />}></Route>
+      <Route path="/info">
+        <Route path=":din" element={<Information />}></Route>
+      </Route>
     </Routes>
   </Router>
 )
