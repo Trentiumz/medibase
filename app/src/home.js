@@ -22,8 +22,6 @@ export default function Homepage(){
               </div>
             </div>
             <div>
-            Hello World!
-            <TTSIcon text="Hello World" lang="en-us"/>
             </div>    
         </div>
     );
