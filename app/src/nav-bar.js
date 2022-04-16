@@ -5,7 +5,7 @@ export default function Navbar(){
         <div>
             <nav id="navbar">
               <div id="subnavbarleft">
-                <img id="logo" src="/assets/logo.png" alt="MediBase"/> 
+                <a href="/"><img id="logo" src="/assets/logo.png" alt="MediBase"/></a> 
               </div>
               <div id="subnavbarright">
                 <a className="navbar-subtitle-text nav-underline" href="/medication">medication</a>
