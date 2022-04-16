@@ -1,5 +1,7 @@
 import Cookies from "universal-cookie";
+import translateText from './api-calls/translateText.js';
 import Notifier from "react-desktop-notification";
+import {useState} from 'react';
 
 export function getProfile(){
     const cookies = new Cookies();
@@ -47,4 +49,35 @@ export function check(){
             cookies.set("profile", profile);
         }
     }
+}
+
+function Lang(props){
+    const cookies = new Cookies();
+    const text = props.text;
+    const lang = props.lang;
+    const hashVal = text + lang;
+    let [curText, setText] = useState(text);
+    let translated = cookies.get("translated");
+    if(!translated) translated = {};
+    if(lang.startsWith("en")){
+        return (<span>{text}</span>);
+    }
+
+    if(translated[hashVal]){
+        return (<span>{translated[hashVal]}</span>);
+    }
+    translateText(text, lang, (response) => {
+        setText(response);
+        translated[hashVal] = response;
+        cookies.set("translated", translated);
+    })
+    return (
+        <span>{curText}</span>
+    )
+}
+
+export function CurLang(props){
+    const text = props.text;
+    const profile = getProfile();
+    return <Lang text={text} lang={profile.language} />;
 }
