@@ -1,6 +1,5 @@
 import React from "react";
-import newProfile from './tools.js';
-import Cookies from "universal-cookie";
+import {getProfile, setProfile} from "./tools.js";
 import './medication.css';
 import Navbar from './nav-bar.js';
 
@@ -8,13 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 
 export default function Medication(){
-    const cookies = new Cookies();
-    let current = cookies.get("profile");
-
-    if(!current){
-        newProfile();
-        current = cookies.get("profile");
-    }
+    let current = getProfile();
 
     // each medication is an object
     /**

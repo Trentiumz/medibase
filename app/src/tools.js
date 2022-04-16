@@ -1,7 +1,22 @@
 import Cookies from "universal-cookie";
 import Notifier from "react-desktop-notification";
 
-export default function newProfile(){
+export function getProfile(){
+    const cookies = new Cookies();
+    let profile = cookies.get("profile");
+    if(!profile){
+        newProfile();
+        profile = cookies.get("profile");
+    }
+    return profile;
+}
+
+export function setProfile(profile){
+    const cookies = new Cookies();
+    cookies.set("profile", profile);
+}
+
+function newProfile(){
     const cookies = new Cookies();
 
     const profile = {
