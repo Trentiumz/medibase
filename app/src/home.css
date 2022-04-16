@@ -3,6 +3,7 @@
 
 :root {
   --lblue: #89B9E5;
+  --dblue: #558FC3;
 }
 
 *{
@@ -45,7 +46,7 @@ img{
   color: var(--lblue);
 }
 .nav-underline{
-  background-image: linear-gradient(120deg, black 0%, black 100%);
+  background-image: linear-gradient(120deg, var(--dblue) 0%, var(--dblue) 100%);
   background-repeat: no-repeat;
   background-size: 90% 0;
   background-position: 50% 95%;
@@ -54,9 +55,10 @@ img{
 }
 .nav-underline:hover{
   background-size: 90% 4%;
+  color: var(--dblue);
 }
 .selected{
-  background-image: linear-gradient(120deg, black 0%, black 100%);
+  background-image: linear-gradient(120deg, var(--dblue) 0%, var(--dblue) 100%);
   background-repeat: no-repeat;
   background-size: 90% 4%;
   background-position: 50% 95%;
@@ -66,19 +68,13 @@ img{
   height: 48px;
 }
 .content{
-    position: absolute;
-  display: table;
-  padding-right: 100px;
-  padding-left: 100px;
-  margin: 0 auto;
   position: absolute;
+  display: table;
+  margin: 0 auto;
   top: 100px;
-  width: 100%;
-  display: flex;  
   height: calc(100%-100px);
   height: -moz-calc(100% - 100px);
   height: -webkit-calc(100% - 100px);
-  justify-content: left;
   background-image: url("https://media.discordapp.net/attachments/759867023885860934/964904812938412122/Group_5_3.png?width=624&height=664");
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,11 +85,13 @@ img{
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  
+  font-size: 55px;
+  color: var(--dblue);
 }
 .inner-content{
   display: table-cell; 
   vertical-align: middle; 
   align-items: center;
   justify-content: center;
+  padding: 0 250px;
 }
