@@ -6,10 +6,16 @@ import Profile from "./profile.js";
 import Information from "./info.js";
 import Scan from "./add.js";
 import Homepage from "./home.js";
-import Login from './login.js';
-import Register from './register';
+import translateText from "./api-calls/translateText.js";
+import textToSpeech from './api-calls/textToSpeech';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+translateText("Hello World!", "zh", (test) =>{
+  setInterval(() => {console.log(test);}, 1000);
+});
+//var test = textToSpeech("Hello World!", "en-us");
+//setInterval(() => {console.log(test);}, 1000);
+
 root.render(
   <Router>
     <Routes>
