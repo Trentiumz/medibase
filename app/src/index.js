@@ -8,8 +8,12 @@ import Information from "./info.js";
 import Scan from "./scan.js";
 import Homepage from "./home.js";
 import Medication from './medication';
+import { check } from './tools';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+setInterval(check, 1000);
+
 root.render(
   <>
   <Navbar/>
