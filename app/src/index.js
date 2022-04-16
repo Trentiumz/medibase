@@ -7,6 +7,7 @@ import Information from "./info.js";
 import Scan from "./add.js";
 import Homepage from "./home.js";
 import Login from './login.js';
+import Register from './register';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path=":din" element={<Information />}></Route>
       </Route>
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
   </Router>
 )

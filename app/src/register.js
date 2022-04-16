@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export default function Login(){
+export default function Register(){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -16,9 +16,9 @@ export default function Login(){
                     Password:
                     <input type="text" value={password} onChange={(event) => setPassword(event.target.value)} />
                 </label>
-            </form>
 
-            <a href="/register" class="to-register">Register</a>
+                <a href="/login" class="to-login">Login</a>
+            </form>
         </div>
     );
 }
