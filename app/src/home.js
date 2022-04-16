@@ -1,5 +1,4 @@
 import React from 'react';
-import TTSIcon from './tts';
 import './home.css';
 
 export default function Homepage(){
@@ -12,6 +11,7 @@ export default function Homepage(){
               <div id="subnavbarright">
                 <a className="navbar-subtitle-text nav-underline" href="/medication">medication</a>
                 <a className="navbar-subtitle-text nav-underline" href="/schedule">schedule</a>
+                <a className="navbar-subtitle-text nav-underline" href="/scan">scan</a>
                 <a className="navbar-subtitle-text nav-underline" href="/login">login</a>
               </div>
 
