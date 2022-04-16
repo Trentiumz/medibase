@@ -1,6 +1,6 @@
 import Cookies from "universal-cookie"
 
-export function newProfile(){
+export default function newProfile(){
     const cookies = Cookies();
 
     const profile = {
