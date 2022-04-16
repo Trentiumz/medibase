@@ -1,6 +1,10 @@
 import React from "react";
 import newProfile from './tools.js';
 import Cookies from "universal-cookie";
+import './medication.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 
 export default function Medication(){
     const cookies = Cookies();
