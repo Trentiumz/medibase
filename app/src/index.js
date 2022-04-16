@@ -6,6 +6,8 @@ import Profile from "./profile.js";
 import Information from "./info.js";
 import Scan from "./add.js";
 import Homepage from "./home.js";
+import Login from './login.js';
+import Register from './register';
 import translateText from "./api-calls/translateText.js";
 import textToSpeech from './api-calls/textToSpeech';
 
