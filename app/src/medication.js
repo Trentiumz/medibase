@@ -2,12 +2,13 @@ import React from "react";
 import newProfile from './tools.js';
 import Cookies from "universal-cookie";
 import './medication.css';
+import Navbar from './nav-bar.js';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 
 export default function Medication(){
-    const cookies = Cookies();
+    const cookies = new Cookies();
     let current = cookies.get("profile");
 
     if(!current){
@@ -27,17 +28,7 @@ export default function Medication(){
     const medication = current.medication;
     return(
       <div>
-        <nav id="navbar">
-          <div id="subnavbarleft">
-            <img id="logo" src="/assets/logo.png" alt="MediBase"/> 
-          </div>
-          <div id="subnavbarright">
-            <a className="navbar-subtitle-text nav-underline" href="/medication">medication</a>
-            <a className="navbar-subtitle-text nav-underline" href="/schedule">schedule</a>
-            <a className="navbar-subtitle-text nav-underline" href="/login">login</a>
-          </div>
-          
-        </nav>
+        <Navbar />
         <div className="content">
           <div className="inner-content">
             <div id="left-column">
