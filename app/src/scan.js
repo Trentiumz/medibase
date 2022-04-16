@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
+import "./scan.css";
+
+
 function GetDIN() {
     const [content, setContent] = useState("00000000")
     const navigate = useNavigate();
@@ -22,19 +25,25 @@ function GetDIN() {
     }
 
     return(
-        <form class="input-form" onSubmit={onSubmit}>
-            <label class="din-input-container">
-                <span class="din-label">DIN Number:</span>
-                <input class="din-input" type="number" value={content} onChange={onDinChange} name="din" />
-            </label>
-            <input class="input-submit" type="submit" value="Submit"/>
-        </form>
+        <div class="scan-right">
+            <span class="din-label">enter DIN:</span>
+            <div class="din-info">DIN is the Drug Identification<br/>Number on prescription labels.</div>
+            <form class="input-form" onSubmit={onSubmit}>
+                <label class="din-input-container">
+                    <input class="din-input" type="number" value={content} onChange={onDinChange} name="din" />
+                </label>
+                <input class="input-submit" type="submit" value="go!"/>
+            </form>
+        </div>
     );
 }
 
 export default function Scan(){
 
     return(
-        <GetDIN />
+        <div>
+            <img src="app/public/assets/qrcode.png" alt="app/public/assets/logo.png"></img>
+            <GetDIN />
+        </div>
     );
 }
