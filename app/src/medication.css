@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* custom scroll bar! ------------------ */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 15px;
+  padding: 15px;
+  background: rgb(228, 228, 228); 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgrey; 
+  border-radius: 15px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+/* vars -------------------------------- */
+
+:root {
+  --lblue: #89B9E5;
+  --lbluet: rgba(137,185,229,0.15);
+  --dblue: #558FC3;
+}
+
+*{
+  font-family: 'Varela Round', sans-serif;
+}
+a{
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+img{
+  display: block;
+  margin: 0;
+}
+#navbar{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100px;
+  width: 100%;
+  display: table; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: background 0.15s ease-out;
+}
+#subnavbarright{
+  display: table-cell; vertical-align: middle;  text-align:right;
+  padding-right: 30px;
+}
+#subnavbarleft{
+  display: table-cell; vertical-align: middle;
+  padding-left: 30px;
+}
+.navbar-subtitle-text{
+  font-size: 22.5px;
+  margin: 10px;
+  color: var(--lblue);
+}
+.nav-underline{
+  background-image: linear-gradient(120deg, var(--dblue) 0%, var(--dblue) 100%);
+  background-repeat: no-repeat;
+  background-size: 90% 0;
+  background-position: 50% 95%;
+  transition: background-size 0.15s ease-out;
+  padding: 5px;
+}
+.nav-underline:hover{
+  background-size: 90% 4%;
+  color: var(--dblue);
+}
+.selected{
+  background-image: linear-gradient(120deg, var(--dblue) 0%, var(--dblue) 100%);
+  background-repeat: no-repeat;
+  background-size: 90% 4%;
+  background-position: 50% 95%;
+  padding: 5px;
+}
+#logo{
+  height: 48px;
+}
+.content{
+  position: absolute;
+  display: table;
+  margin: 0 auto;
+  top: 100px;
+  height: calc(100%-100px);
+  height: -moz-calc(100% - 100px);
+  height: -webkit-calc(100% - 100px);
+  background-image: url("https://media.discordapp.net/attachments/759867023885860934/964904812938412122/Group_5_3.png?width=624&height=664");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.inner-content{
+  height: calc(100% - 150px);
+  height: -moz-calc(100% - 150px);
+  height: -webkit-calc(100% - 150px);
+  display: flex; 
+  vertical-align: middle; 
+  align-items: center;
+  justify-content: center;
+  padding: 75px 125px;
+}
+#medication-info{
+  padding: 40px;
+}
+.medication-info-body{
+  flex: 1;
+  height: 100%;
+}
+.inner-medication-info-body{
+  overflow: auto;
+  max-height: calc(100vh - 382px);
+  max-height: -moz-calc(100vh - 382px);
+  max-height: -webkit-calc(100vh - 382px);
+}
+.top-bar{
+  margin: 0;
+  margin-bottom: 10px;
+}
+.top-bar-title{
+  font-size: 28px;
+  color: var(--dblue);
+  margin: 0;
+}
+hr {
+  border: solid 1px var(--dblue);
+}
+.rectangles{
+  flex: 1;
+  border: solid var(--dblue) 3.5px;
+  border-radius: 7.5px;
+}
+#medication-list-header{
+  display: flex;
+}
+#medication-list-header-title{
+  font-size: 25px;
+  color: var(--dblue);
+  flex: 1;
+  margin: 10px 0;
+}
+#medication-list-header-icon{
+  font-size: 22px;
+  color: var(--dblue);
+  margin: 0;
+  float: right;
+}
+#info-tts-icon{
+  font-size: 22px;
+  color: var(--dblue);
+  float: right;
+}
+#info-notif-icon{
+  font-size: 22px;
+  color: var(--dblue);
+  float: right;
+  padding-left: 12px;
+}
+
+.icon-buttons{
+  align-self: flex-end;
+  margin-bottom: 12px;
+}
+#inner-medication-list{
+  max-height: calc(100vh - 300px);
+  max-height: -moz-calc(100vh - 300px);
+  max-height: -webkit-calc(100vh - 300px);
+}
+#medication-list{
+  flex: 1;
+  overflow: auto;
+}
+#left-column{
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  width: 100%;
+  margin-right: 20px;
+  min-height: calc(100vh - 382px);
+  min-height: -moz-calc(100vh - 382px);
+  min-height: -webkit-calc(100vh - 382px);
+}
+#right-column{
+  display: flex;
+  flex-flow: column;
+  flex: 2.5;
+  width: 100%;
+  min-height: calc(100vh - 382px);
+  min-height: -moz-calc(100vh - 382px);
+  min-height: -webkit-calc(100vh - 382px);
+}
+.info-item{
+  color: var(--dblue);
+  font-size: 20px;
+  margin: 10px 0 5px 0;
+}
+.info-description{
+  color: var(--lblue);
+  font-size: 16px;
+  margin-top: 0;
+}
+.medication-list-item{
+  height: 2.5em;
+  border-radius: 5px;
+  border: solid var(--dblue) 2px;
+  margin: 2px;
+  color: var(--dblue);
+  vertical-align: middle;
+}
+.medication-list-item:hover{
+  background-color: var(--lbluet);
+}
+.medication-list-item-text{
+  margin: 11px;
+}
