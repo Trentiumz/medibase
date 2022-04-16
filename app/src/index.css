@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
+:root {
+  --lblue: #89B9E5;
+}
+
+*{
+  font-family: 'Varela Round', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+body{
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+img{
+  display: block;
+  margin: 0;
+}
+#navbar{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100px;
+  width: 100%;
+  display: table; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: background 0.15s ease-out;
+}
+#subnavbarright{
+  display: table-cell; vertical-align: middle;  text-align:right;
+  padding-right: 30px;
+}
+#subnavbarleft{
+  display: table-cell; vertical-align: middle;
+  padding-left: 30px;
+}
+.navbar-subtitle-text{
+  font-size: 22.5px;
+  margin: 10px;
+  color: var(--lblue);
+}
+.nav-underline{
+  background-image: linear-gradient(120deg, black 0%, black 100%);
+  background-repeat: no-repeat;
+  background-size: 90% 0;
+  background-position: 50% 95%;
+  transition: background-size 0.15s ease-out;
+  padding: 5px;
+}
+.nav-underline:hover{
+  background-size: 90% 4%;
+}
+.selected{
+  background-image: linear-gradient(120deg, black 0%, black 100%);
+  background-repeat: no-repeat;
+  background-size: 90% 4%;
+  background-position: 50% 95%;
+  padding: 5px;
+}
+#logo{
+  height: 48px;
+}
+.content{
+    position: absolute;
+  display: table;
+  padding-right: 100px;
+  padding-left: 100px;
+  margin: 0 auto;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  display: flex;  
+  height: calc(100%-100px);
+  height: -moz-calc(100% - 100px);
+  height: -webkit-calc(100% - 100px);
+  justify-content: left;
+  background-image: url("https://media.discordapp.net/attachments/759867023885860934/964904812938412122/Group_5_3.png?width=624&height=664");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.feature-text{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  
+}
+.inner-content{
+  display: table-cell; 
+  vertical-align: middle; 
+  align-items: center;
+  justify-content: center;
+}
