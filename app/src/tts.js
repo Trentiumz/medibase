@@ -1,15 +1,9 @@
 import React, {useState, useEffect} from "react";
-import textToSpeech from "./api-calls/textToSpeech";
 
 export default function TTSIcon(props){
     const text = props.text;
     const lang = props.lang;
-    let link = null;
-    textToSpeech(text, lang, (response) => {
-        console.log(response);
-        const file = new Blob([response.data])
-        link = URL.createObjectURL(file)
-    });
+    let link = `http://api.voicerss.org/?key=${process.env.REACT_APP_TTS_KEY}&hl=${lang}&src=${text}`;
     function onClick(){
         console.log(link);
         if(link){
@@ -18,6 +12,6 @@ export default function TTSIcon(props){
         }
     }
     return(
-        <button onClick={onClick}></button>
+        <button onClick={onClick}>Click</button>
     )
 }

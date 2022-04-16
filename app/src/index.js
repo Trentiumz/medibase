@@ -8,16 +8,12 @@ import Information from "./info.js";
 import Scan from "./scan.js";
 import Homepage from "./home.js";
 import Medication from './medication';
-
-import * as googleTTS from 'google-tts-api';
-const url = googleTTS.getAudioUrl("Boop super cool", {
-  lang: 'en',
-  slow: false,
-  host: "https://translate.google.com"
-});
-console.log(url);
+import { check } from './tools';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+setInterval(check, 1000);
+
 root.render(
   <>
   <Navbar/>
