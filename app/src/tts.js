@@ -11,6 +11,7 @@ export default function TTSIcon(props){
         link = URL.createObjectURL(file)
     });
     function onClick(){
+        console.log(link);
         if(link){
             const audio = new Audio(link)
             audio.play();

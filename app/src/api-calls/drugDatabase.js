@@ -14,10 +14,15 @@ export default async function MakeDINRequests(din) {
         setRet(tmp);
     }
 
+    updateRet("error", "none");
+
     // get the base information using DIN
     DINRequest.url = `https://health-products.canada.ca/api/drug/drugproduct/?lang=en&type=json&din=${din}`;
     await axios(DINRequest).then(response => {
-        console.log(response);
+        if (response.data.length === 0) {
+            updateRet("error", "DIN not found");
+            return;
+        }
         updateRet("drug_code", response.data[0].drug_code);
         updateRet("class_name", response.data[0].class_name);
         updateRet("brand_name", response.data[0].brand_name);
@@ -29,25 +34,23 @@ export default async function MakeDINRequests(din) {
     // get the dosage form (liquid, ointment, etc.)
     DINRequest.url = `https://health-products.canada.ca/api/drug/form/?lang=en&type=json&id=${ret.drug_code}`;
     await axios(DINRequest).then(response => {
-        console.log(response);
         updateRet("form", response.data[0].pharmaceutical_form_name);
     }).catch(error => {console.log(error)});
 
     DINRequest.url = `https://health-products.canada.ca/api/drug/route/?lang=en&type=json&id=${ret.drug_code}`;
     await axios(DINRequest).then(response => {
-        console.log(response)
         updateRet("route", response.data[0].route_of_administration_name);
     }).catch(error => {console.log(error)});
 
     // get the active ingredients
     DINRequest.url = `https://health-products.canada.ca/api/drug/activeingredient/?lang=en&type=json&id=${ret.drug_code}`;
     await axios(DINRequest).then(response => {
-        console.log(response);
         const ingredients = response.data.map((el) => {return {
             name: el.ingredient_name,
             strength: el.strength + " " + el.strength_unit,
         }})
         updateRet("ingredients", ingredients);
     }).catch (error => {console.log(error)});
-    console.log(ret)
+    console.log(ret);
+    return ret;
 }

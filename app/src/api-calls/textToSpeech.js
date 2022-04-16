@@ -4,7 +4,7 @@ const options = {
   method: 'GET',
   url: 'https://voicerss-text-to-speech.p.rapidapi.com/',
   params: {
-    key: process.env.REACT_APP_TTS_KEY,
+    key: 'ccf44a535d034b58b8b775bf3636c619' || process.env.REACT_APP_TTS_KEY,
     src: 'Hello, world!',
     hl: 'en-us',
     r: '0',
