@@ -7,11 +7,11 @@ const DINRequest = {
 };
 
 export default async function MakeDINRequests(din) {
-    const [ret, setRet] = useState({});
+    let ret = {}
     function updateRet(key, val) {
         let tmp = ret;
         tmp[key] = val;
-        setRet(tmp);
+        ret = tmp
     }
 
     updateRet("error", "none");

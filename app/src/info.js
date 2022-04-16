@@ -9,9 +9,10 @@ export default function Information(){
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
     if (loading) {
-        setData(MakeDINRequests(din));
+        MakeDINRequests(din).then(response => {
+            setData(response);
+        });
         setLoading(false);
-        console.log(data, loading);
     }
     if (!data) {
         return (<div>Hi</div>);
