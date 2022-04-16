@@ -11,7 +11,7 @@ export default function Profile() {
     useEffect(() => {
         console.log(curId);
         if(!curId) navigate("/login");
-    }, [curId]);
+    });
 
     return(
         <div>

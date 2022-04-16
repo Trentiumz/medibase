@@ -6,8 +6,7 @@ import Profile from "./profile.js";
 import Information from "./info.js";
 import Scan from "./add.js";
 import Homepage from "./home.js";
-import Login from './login.js';
-import Register from './register';
+import Medication from './medication';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,8 +19,7 @@ root.render(
       <Route path="/info">
         <Route path=":din" element={<Information />}></Route>
       </Route>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/medication" element={<Medication />} />
     </Routes>
   </Router>
 )
