@@ -22,6 +22,7 @@ function getInd(din){
 export function InformationFormat(props){
     const data = props.data
     let profile = getProfile();
+    console.log(profile);
     const ind = getInd(data.din);
     const [tmp, setNotif] = useState(false);
     const notif = ind >= 0 ? profile.medication[ind].to_notify : false;

@@ -26,7 +26,7 @@ export default function InitialSearch() {
 
   function onClick() {
     if(data){
-      let profile = cookies.get("profile");
+      let profile = getProfile();
       for(let med of profile.medication){
         if(med.din === data.din){
           alert("medication already added!");
@@ -40,7 +40,7 @@ export default function InitialSearch() {
           to_notify: true,
           last_date_taken: parseInt(new Date().getDate())
       })
-      cookies.set("profile", profile);
+      setProfile(profile);
       console.warn(profile);
       alert("medication added!");
     }
