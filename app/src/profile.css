@@ -261,7 +261,6 @@ hr {
   margin-bottom: 30px;
 }
 .inner-profile-info-body{
-  overflow: auto;
   max-height: calc(100vh - 382px);
   max-height: -moz-calc(100vh - 382px);
   max-height: -webkit-calc(100vh - 382px);
