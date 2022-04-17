@@ -5,7 +5,7 @@ import MakeDINRequests from './api-calls/drugDatabase';
 import Cookies from 'universal-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
-import TTSIcon from './api-calls/tts';
+import TTS from './api-calls/tts';
 import { getProfile, setProfile } from './tools';
 
 export function InformationFormat(data){
@@ -21,7 +21,7 @@ export function InformationFormat(data){
                 <a className="icon-buttons" href="/add">
                   <FontAwesomeIcon id="info-notif-icon" icon={faBell} />
                 </a>
-                <div className="icon-buttons" onClick={() => {TTSIcon({"text": ttsStuff, "lang": profile.language})}}>
+                <div className="icon-buttons" onClick={() => {TTS({"text": ttsStuff, "lang": profile.language})}}>
                   <FontAwesomeIcon id="info-tts-icon" icon={faVolumeHigh} />
                 </div>
                 <p className = "top-bar-title">{data.brand_name}</p>
