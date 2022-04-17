@@ -1,8 +1,6 @@
 import React from 'react';
 import './home.css';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { CurLang } from './tools';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 export default function Homepage(){
     return(
@@ -14,7 +12,6 @@ export default function Homepage(){
             </div>
             <div className = "test">
             </div>
-            <FontAwesomeIcon icon={faCoffee} />
         </div>
     );
 }
