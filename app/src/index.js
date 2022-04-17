@@ -9,6 +9,7 @@ import Scan from "./scan.js";
 import Homepage from "./home.js";
 import Medication from './medication';
 import { check } from './tools';
+import Search from './search';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -24,7 +25,7 @@ root.render(
       <Route path="/profile" element={<Profile />}></Route>
       <Route path="/scan" element={<Scan />}></Route>
       <Route path="/info">
-        <Route path=":din" element={<Information />}></Route>
+        <Route path=":din" element={<Search />}></Route>
       </Route>
       <Route path="/medication" element={<Medication />} />
     </Routes>

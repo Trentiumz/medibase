@@ -1,13 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import {getProfile, setProfile} from "./tools.js";
 import './medication.css';
 import Navbar from './nav-bar.js';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
+import Information from "./info.js";
 
 export default function Medication(){
     let current = getProfile();
+    const medication = current.medication;
+    const [din, setDin] = useState(medication[0].din);
 
     // each medication is an object
     /**
@@ -18,7 +21,7 @@ export default function Medication(){
      *      notes: ,
      * }]
      */
-    const medication = current.medication;
+
     return(
       <div>
         <Navbar />
@@ -32,50 +35,21 @@ export default function Medication(){
                 </a>
               </div>
               <div id="medication-list" className="rectangles">
-                <div id="inner-medication-list">
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                  <div class="medication-list-item"><p class="medication-list-item-text">drug1</p></div>
-                </div>
+                {
+                  medication.map((el, key) => {
+                    return (
+                      <div key={key}>
+                        <button className="medication-list-item" onClick={() => setDin(el.din)}>
+                          <p className="medication-list-item-text">{el.medication_name}</p>
+                        </button>
+                      </div>
+                    )
+                  })
+                }
               </div>
             </div>
             <div id="right-column">
-              <div id="medication-info" className="rectangles">
-                <div className="top-bar">
-                  <div class="info-icons">
-                    <a className="icon-buttons" href="/add">
-                      <FontAwesomeIcon id="info-notif-icon" icon={faBell} />
-                    </a>
-                    <a className="icon-buttons" href="/add">
-                      <FontAwesomeIcon id="info-tts-icon" icon={faVolumeHigh} />
-                    </a>
-                    <p className = "top-bar-title">drug 1</p>
-                  </div>
-                </div>
-                <hr/>
-                <div className="medication-info-body">
-                  <div className="inner-medication-info-body">
-                    <p className="info-item">instructions:</p>
-                    <p className="info-description">placeholder</p>
-                    <p className="info-item">frequency:</p>
-                    <p className="info-description">placeholder</p>
-                    <p className="info-item">quantity:</p>
-                    <p className="info-description">placeholder</p>
-                    <p className="info-item">ingredients:</p>
-                    <p className="info-description">placeholder</p>  
-                    <p className="info-item">purpose/description:</p>
-                    <p className="info-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>  
-                    </div>
-                </div>
-              </div>
+              {Information(din)}
             </div>
           </div>
         </div>

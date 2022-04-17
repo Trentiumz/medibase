@@ -228,6 +228,7 @@ hr {
 }
 .medication-list-item:hover{
   background-color: var(--lbluet);
+  cursor: pointer;
 }
 .medication-list-item-text{
   margin: 11px;
