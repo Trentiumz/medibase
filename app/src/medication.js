@@ -18,7 +18,7 @@ export default function Medication(){
           <Navbar />  
         <div className="content">
           <div className="inner-content">
-            <p className="error-text"> Oops! Looks like you don't have any medications. <a href="/search/">Click here</a> to add some.</p>
+            <p className="error-text"> Oops! Looks like you don't have any medications. <a className="a-error" href="/search/">Click here</a> to add some.</p>
             </div>
           </div>
         </div>
