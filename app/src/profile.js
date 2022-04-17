@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {CurLang} from "./tools.js"
 import { getProfile, setProfile } from './tools.js';
 import Navbar from './nav-bar.js';
 
@@ -27,16 +28,16 @@ export default function Profile() {
             <div className="content">
                 <div className="inner-content">
                     <p className="feature-text">{current.name}</p>
-                    <p className="feature-text">Language: {language}</p>
+                    <p className="feature-text"><CurLang text="Language: " />{language}</p>
                     <Select defaultValue={language} options={options} onChange={(lan) => {
                         setProfile({...current, language: lan.value});
                         setLanguage(lan.value)
                     }}/>
-                    <p className="feature-text">Color-Blind Mode: {colorblind ? "Off" : "On"}</p>
+                    <p className="feature-text"><CurLang text="Color-Blind Mode: " /><CurLang text={colorblind ? "Off" : "On"} /></p>
                     <button onClick={() => {
                         setProfile({...current, colorblind: !colorblind});
                         setColorblind(!colorblind)
-                    }}>Change</button>
+                    }}><CurLang text="Change" /></button>
                 </div>
             </div>
         </div>
