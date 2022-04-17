@@ -44,8 +44,6 @@ export default function InitialSearch() {
       })
       setProfile(profile);
       console.warn(profile);
-      cookies.set("profile", profile);
-      console.log(profile);
       alert("medication added!");
     }
   }
