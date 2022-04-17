@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 
 export function InformationFormat(data){
+    console.log(data);
     return(
         <div id="medication-info" className="rectangles">
             <div className="top-bar">
@@ -48,7 +49,13 @@ export function InformationFormat(data){
 export default function Information(din){
     //const {din} = useParams();
     const [loading, setLoading] = useState(true);
+    const [oldData, setOldData] = useState(null);
     const [data, setData] = useState(null);
+    if (!loading && data !== null && data.din !== din) {
+        setLoading(true);
+        setOldData(data);
+        setData(null);
+    }
     if (loading) {
         MakeDINRequests(din).then(response => {
             setData(response);
@@ -56,8 +63,10 @@ export default function Information(din){
         setLoading(false);
     }
 
-    if (!data) {
+    if (!data && !oldData) {
         return (<div>Loading...</div>);
+    } else if (!data) {
+        return InformationFormat(oldData);
     } else if (data.error === "DIN not found") {
         return (
             <div class="din-not-found">

@@ -48,7 +48,8 @@ export default function Medication(){
                   medication.map((el, key) => {
                     return (
                       <div key={key}>
-                        <button className="medication-list-item" onClick={() => setDin(el.din)}>
+                        <button className="medication-list-item" onClick={() => {
+                          setDin(el.din);console.log(el.din)}}>
                           <p className="medication-list-item-text">{el.medication_name}</p>
                         </button>
                       </div>

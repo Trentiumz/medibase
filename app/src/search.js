@@ -10,7 +10,7 @@ import Information, { InformationFormat } from "./info.js";
 import MakeDINRequests from "./api-calls/drugDatabase.js";
 
 export default function Search() {
-  const cookies = new Cookies
+  const cookies = new Cookies();
   const {din} = useParams();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
