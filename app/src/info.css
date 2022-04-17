@@ -178,6 +178,11 @@ hr {
   align-self: flex-end;
   margin-bottom: 12px;
 }
+
+.icon-buttons:hover {
+  cursor: pointer;
+}
+
 #inner-medication-list{
   max-height: calc(100vh - 300px);
   max-height: -moz-calc(100vh - 300px);
