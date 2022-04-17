@@ -10,7 +10,21 @@ import Information from "./info.js";
 export default function Medication(){
     let current = getProfile();
     const medication = current.medication;
-    const [din, setDin] = useState(medication[0].din);
+    const [din, setDin] = useState(medication.length > 0 ? medication[0].din : null);
+
+    if (din === null) {
+      return (
+        <div>
+          <Navbar />
+          Oops! Looks like you don't have any medications. Add one by clicking the button below.
+          <div className="add-button-container">
+            <a className="add-button" href="/scan">
+              <FontAwesomeIcon icon={faPlus} />
+            </a>
+          </div>
+        </div>
+      )
+    }
 
     // each medication is an object
     /**
