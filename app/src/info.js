@@ -5,24 +5,44 @@ import MakeDINRequests from './api-calls/drugDatabase';
 import Cookies from 'universal-cookie';
 import TTSIcon from './tts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
-import { getProfile } from './tools';
+import { faPlus, faBell, faVolumeHigh, faBellSlash } from '@fortawesome/free-solid-svg-icons'
+import { getProfile, setProfile } from './tools';
 import {CurLang} from "./tools.js"
 import "./info.css";
 
-export function InformationFormat(data){
-    console.log(data);
+function getInd(din){
+    for(let ind = 0; ind < getProfile().medication.length; ind++){
+        if(parseInt(getProfile().medication[ind].din) === parseInt(din)){
+            return ind;
+        }
+    }
+    return -1;
+}
+
+export function InformationFormat(props){
+    const data = props.data
+    let profile = getProfile();
+    const ind = getInd(data.din);
+    const [notif, setNotif] = useState(ind >= 0 ? profile.medication[ind].to_notify : false);
 
     const message = `${data.brand_name}. Dosage form: ${data.form}. Route of administration: ${data.route}.`;
     console.log(message)
 
-    return(
+    function onToggle(){
+        if(ind >= 0){
+            profile = getProfile();
+            profile.medication[ind].to_notify = !notif;
+            setProfile(profile);
+            setNotif(!notif);
+        }
+    }
 
+    return(
           <div id="medication-info" className="rectangles">
             <div className="top-bar">
               <div className="info-icons">
-                <div className="icon-buttons" onClick={() => console.log("hi")}>
-                  <FontAwesomeIcon id="info-notif-icon" icon={faBell} />
+                <div className="icon-buttons" onClick={() => onToggle()}>
+                  {notif ? <FontAwesomeIcon id="info-notif-icon" icon={faBell} /> : <FontAwesomeIcon id="info-notif-icon" icon={faBellSlash} />}
                 </div>
                 <TTSIcon text={message} lang={getProfile().language}/>
                 <p className = "top-bar-title">{data.brand_name}</p>
@@ -74,8 +94,16 @@ export default function Information(din){
     if (!data && !oldData) {
         return (<div>Loading...</div>);
     } else if (!data) {
-        return InformationFormat(oldData);
+        return <InformationFormat data={oldData} />;
+    } else if (data.error === "DIN not found") {
+        return (
+            <div class="din-not-found">
+                <p>DIN not found</p>
+                <p>Please try again</p>
+                <a href="/">Return Home</a>
+            </div>
+        );
     } else {
-        return InformationFormat(data);
+        return <InformationFormat data={data} />;
     }
 }
