@@ -9,8 +9,20 @@ import Information from "./info.js";
 
 export default function Medication(){
     let current = getProfile();
-    const medication = current.medication;
+    const [medication, setMedication] = useState(current.medication);
     const [din, setDin] = useState(medication.length > 0 ? medication[0].din : null);
+
+    function deleteSave() {
+      for (let i = 0; i < medication.length; i++) {
+        if (medication[i].din === din) {
+          current.medication.splice(i, 1);
+          break;
+        }
+      }
+      setProfile(current);
+      setMedication(current.medication);
+      alert("This medication has been unsaved.");
+    }
 
     if (din === null) {
       return (
@@ -63,7 +75,7 @@ export default function Medication(){
               </div>
             </div>
             <div id="right-column">
-              <Information din={din} />
+              <Information din={din} deleteSave={deleteSave}/>
             </div>
           </div>
         </div>

@@ -161,6 +161,14 @@ hr {
   margin: 0;
   float: right;
 }
+
+#info-times-icon {
+  font-size: 25px;
+  color: var(--dblue);
+  float: right;
+  padding-left: 12px;
+}
+
 #info-tts-icon{
   font-size: 22px;
   color: var(--dblue);

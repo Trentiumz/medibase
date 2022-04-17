@@ -5,7 +5,7 @@ import MakeDINRequests from './api-calls/drugDatabase';
 import Cookies from 'universal-cookie';
 import TTSIcon from './api-calls/tts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faBell, faVolumeHigh, faBellSlash } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faTimes, faBell, faVolumeHigh, faBellSlash } from '@fortawesome/free-solid-svg-icons'
 import { getProfile, setProfile } from './tools';
 import {CurLang} from "./tools.js"
 import "./info.css";
@@ -21,6 +21,7 @@ function getInd(din){
 
 export function InformationFormat(props){
     const data = props.data
+    const x = props.x;
     let profile = getProfile();
     console.log(profile);
     const ind = getInd(data.din);
@@ -43,6 +44,9 @@ export function InformationFormat(props){
           <div id="medication-info" className="rectangles">
             <div className="top-bar">
               <div className="info-icons">
+                <div style={{display: x ? 'inline' : 'none'}} onClick={props.onclickX} className='icon-buttons'>
+                    <FontAwesomeIcon id="info-times-icon" icon={faTimes} />
+                </div>
                 <div className="icon-buttons" onClick={() => onToggle()}>
                   {notif ? <FontAwesomeIcon id="info-notif-icon" icon={faBell} /> : <FontAwesomeIcon id="info-notif-icon" icon={faBellSlash} />}
                 </div>
@@ -83,6 +87,8 @@ export default function Information(props){
     const [loading, setLoading] = useState(true);
     const [oldData, setOldData] = useState(null);
     const [data, setData] = useState(null);
+
+
     if (!loading && data !== null && data.din !== din) {
         setLoading(true);
         setOldData(data);
@@ -108,6 +114,6 @@ export default function Information(props){
             </div>
         );
     } else {
-        return <InformationFormat data={data} />;
+        return <InformationFormat data={data} x={true} onclickX={props.deleteSave}/>;
     }
 }

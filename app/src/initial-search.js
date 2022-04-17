@@ -67,7 +67,7 @@ export default function InitialSearch() {
         <Navbar />
         <div className='info-content'>
           <div className='info-inner-content'>
-            <InformationFormat data={data} />
+            <InformationFormat data={data} x={false} />
             <button className="save-medication-btn" value="Save Medication" onClick = {onClick}>Save Medication</button>
           </div>
         </div>
