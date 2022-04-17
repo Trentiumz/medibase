@@ -1,18 +1,63 @@
-.scan-right {
-    position: absolute;
-    display: table-cell;
+.inner-content{
+  height: calc(100% - 150px);
+  height: -moz-calc(100% - 150px);
+  height: -webkit-calc(100% - 150px);
+  display: flex; 
+  vertical-align: middle; 
+  align-items: center;
+  justify-content: center;
+  padding: 75px 125px;
+}
+
+#left-column {
+    flex: 5;
+    justify-content: flex-end;
+    margin-right: 20px;
+    display: flex;
+  
+}
+#middle-column {
+    flex: 1;
     vertical-align: middle;
-    padding-right: 30px;
-    top: 50%;
-    left: 55%;
-    color: var(--lblue);
+}
+.small{
+  font-size: 16px;
+  text-align: center;
+  color: var(--lblue);
+}
+#right-column {
+    margin-left: 20px;
+    flex: 5;
 }
 
 .din-label {
     font-size: 30px;
+    color: var(--dblue);
 }
-
+.scan-placeholder{
+  border: solid 3.5px var(--dblue);
+  background: var(--lbluet);
+  min-width: 15em;
+  min-height: 15em;
+  max-width: 15em;
+  max-height: 15em;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.scan-placeholder-text{
+    color: var(--lblue);
+}
+.scan-label{
+    font-size: 30px;
+    color: var(--dblue);
+    text-align: center;
+    margin-top: 10px;
+}
 .din-info {
+    color: var(--lblue);
     font-size: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -20,31 +65,31 @@
 
 .input-form {
     display: table-cell;
-
 }
 
 .din-input {
     box-sizing: border-box;
-    border: 2.5px solid var(--lblue);
+    border: 2.5px solid var(--dblue);
     border-radius: 5px;
     color: var(--dblue);
+    height: 2em;
+    margin-top: 5px;
+    margin-right: 5px;
 }
 .din-input:focus {
     outline: none;
-    border: 2.5px solid var(--dblue);
+    box-shadow: 0 5px 10px var(--dbluet);
 }
 
 .input-submit {
-    width: 80px;
-    height: 30px;
-    background-color: white;
+    background-color: var(--lbluet);
     border: 2.5px solid var(--dblue);
     border-radius: 5px;
     color: var(--dblue);
     cursor: pointer;
+    height: 2em;
 }
 
 .input-submit:hover {
-    background-color: var(--lblue);
-    color: white;
+    border: 2.5px solid var(--lblue);
 }
