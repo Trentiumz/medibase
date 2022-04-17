@@ -95,7 +95,7 @@ img{
 #logo{
   height: 48px;
 }
-.info-content{
+.profile-content{
   position: absolute;
   display: table;
   margin: 0 auto;
@@ -109,26 +109,20 @@ img{
   background-position: center;
   width: 100%;
 }
-.info-inner-content{
+.profile-inner-content{
   height: calc(100% - 150px);
   height: -moz-calc(100% - 150px);
   height: -webkit-calc(100% - 150px);
   text-align: center;
-  padding: 75px 125px;
-}
-#medication-info{
-  padding: 40px;
-  text-align: left;
-}
-.medication-info-body{
+  padding: 75px 200px;
   flex: 1;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.inner-medication-info-body{
-  overflow: auto;
-  max-height: calc(100vh - 382px);
-  max-height: -moz-calc(100vh - 382px);
-  max-height: -webkit-calc(100vh - 382px);
+
+.inner-profile-info-body{
+  width: 100%;
 }
 .top-bar{
   margin: 0;
@@ -141,6 +135,7 @@ img{
 }
 hr {
   border: solid 1px var(--dblue);
+  background-color: var(--dblue);
 }
 .rectangles{
   flex: 1;
@@ -173,7 +168,13 @@ hr {
   float: right;
   padding-left: 12px;
 }
-
+#profile-info{
+  padding: 40px 60px;
+  text-align: left;
+}
+.profile-info-body{
+  margin-top: 15px;
+}
 .icon-buttons{
   align-self: flex-end;
   margin-bottom: 12px;
@@ -220,17 +221,48 @@ hr {
 .medication-list-item-text{
   margin: 11px;
 }
-.save-medication-btn{
-  border: solid 3px var(--dblue);
+
+.profile-list{
+  display:flex;
+  margin: 10px 0;
+}
+.profile-item{
+  flex: 1;
+  color: var(--dblue);
+  font-size: 20px;  
+  margin: auto 0;
+}
+
+.profile-description-btn{
+  border: solid 2px var(--dblue);
   border-radius: 5px;
-  margin-top: 18px;
-  padding: 10px 15px;
+  padding: 0 10px;
   color: var(--dblue);
   background: none;
-  font-size: 18px;
+  font-size: 16px;
+  height: 40px;
+  margin: auto 0;
 }
-.save-medication-btn:hover{
-  border: solid 3px var(--lblue);
+.profile-description-btn:hover{
+  border: solid 2px var(--lblue);
   color: var(--dblue);
   background-color: var(--lbluet);
+}
+.profile-description-dropdown{
+  margin: auto 0;
+  min-width: 200px;
+  color: var(--dblue);
+}
+.profile-title{
+  color: var(--dblue);
+  font-size: 48px;
+  padding:0;
+  margin: 0;
+  margin-bottom: 30px;
+}
+.inner-profile-info-body{
+  overflow: auto;
+  max-height: calc(100vh - 382px);
+  max-height: -moz-calc(100vh - 382px);
+  max-height: -webkit-calc(100vh - 382px);
 }
