@@ -8,6 +8,7 @@ export default function TTSIcon(props){
     const lang = props.lang;
     const [curText, setText] = useState(text);
     const [origText, setOrigText] = useState(text);
+    const [playing, setPlaying] = useState(false);
     const [ready, setReady] = useState(false)
 
     if(origText !== text && ready){
@@ -23,9 +24,13 @@ export default function TTSIcon(props){
     }
     let link = `http://api.voicerss.org/?key=${process.env.REACT_APP_TTS_KEY}&hl=${lang}&src=${curText}`;
     function onClick(){
-        if(ready && link){
+        if(ready && link && !playing){
             const audio = new Audio(link)
             audio.play();
+            setPlaying(true);
+            audio.addEventListener('ended', () => {
+                setPlaying(false);
+            });
         }
     }
     return(
