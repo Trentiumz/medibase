@@ -46,7 +46,7 @@ export default function Search() {
         <Navbar />
         <div class='search-info-body'>
           {InformationFormat(data)}
-          <button value="Save Medication" onClick = {onClick}/>
+          <button value="Save Medication" onClick = {onClick}>Save Medication</button>
         </div>
     </div>
     );
