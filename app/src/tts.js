@@ -1,14 +1,22 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
+import { toCurLang } from "./tools";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faVolumeHigh} from '@fortawesome/free-solid-svg-icons'
 
 export default function TTSIcon(props){
     const text = props.text;
     const lang = props.lang;
-    let link = `http://api.voicerss.org/?key=${process.env.REACT_APP_TTS_KEY}&hl=${lang}&src=${text}`;
+    const [curText, setText] = useState(text);
+    const [ready, setReady] = useState(false);
+    if(!ready){
+        toCurLang(text).then(response => {
+            setReady(true);
+            setText(response);
+        })
+    }
+    let link = `http://api.voicerss.org/?key=${process.env.REACT_APP_TTS_KEY}&hl=${lang}&src=${curText}`;
     function onClick(){
-        console.log(link);
-        if(link){
+        if(ready && link){
             const audio = new Audio(link)
             audio.play();
         }

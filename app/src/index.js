@@ -4,7 +4,6 @@ import './index.css';
 import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 
 import Profile from "./profile.js";
-import Information from "./info.js";
 import Scan from "./scan.js";
 import Homepage from "./home.js";
 import Medication from './medication';

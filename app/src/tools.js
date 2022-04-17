@@ -33,20 +33,14 @@ function newProfile(){
 }
 
 export function check(){
-    const cookies = new Cookies();
-    let profile = cookies.get("profile");
-    if(!profile) {
-        newProfile();
-        profile = cookies.get("profile");
-    }
-    
     const cur_date = new Date().getDate();
 
+    let profile = getProfile();
     for(let med of profile.medication){
         if(parseInt(med.last_date_taken) !== parseInt(cur_date)){
             Notifier.start(`Remember to take your ${med.medication_name}!`, `Remember to take ${med.medication_name} daily`, "www.google.com", "https://i.pinimg.com/originals/19/65/4c/19654c67417f65bf121984fe99c33ec1.png")
             med.last_date_taken = parseInt(cur_date);
-            cookies.set("profile", profile);
+            setProfile(profile);
         }
     }
 }
@@ -66,6 +60,7 @@ export async function toLang(text, lang){
     
     let response = await translateText(text, lang)
 
+    translated = cookies.get("translated");
     translated[hashVal] = response;
     cookies.set("translated", translated);
     return response;
