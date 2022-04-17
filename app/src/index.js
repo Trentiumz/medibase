@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
-import Navbar from './nav-bar';
+
 import Profile from "./profile.js";
 import Information from "./info.js";
 import Scan from "./scan.js";
@@ -17,7 +17,7 @@ setInterval(check, 1000);
 
 root.render(
   <>
-  <Navbar/>
+  {/*<Navbar/>*/}
   <Router>
     <Routes>
       <Route path="/" element={<Homepage />}>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {CurLang} from './tools.js';
 import {useNavigate} from "react-router-dom";
+import Navbar from './nav-bar';
 
 import "./scan.css";
 
@@ -56,6 +57,7 @@ export default function Scan(){
 
     return(
         <div>
+            <Navbar />
             <img src="app/public/assets/qrcode.png" alt="app/public/assets/logo.png"></img>
             <GetDIN />
         </div>
