@@ -26,7 +26,7 @@ export function InformationFormat(props){
     console.log(profile);
     const ind = getInd(data.din);
     const [tmp, setNotif] = useState(false);
-    const notif = ind >= 0 ? profile.medication[ind].to_notify : false;
+    const notif = (ind >= 0 && x) ? profile.medication[ind].to_notify : false;
 
     const message = `${data.brand_name}. Dosage form: ${data.form}. Route of administration: ${data.route}.`;
     console.log(message)
