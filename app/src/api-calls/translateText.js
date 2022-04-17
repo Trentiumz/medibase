@@ -10,21 +10,15 @@ const translateRequest = {
   }
 };
 
-export default function translateText(text, lang, then) {
+export default async function translateText(text, lang) {
   translateRequest.params.q = text;
   translateRequest.params.langpair = `en|${lang}`;
-  axios(translateRequest)
-    .then(response => {
-      for (let i = 0; i < response.data.matches.length; i++) {
-        let match = response.data.matches[i];
-        if (match.segment !== match.translation) {
-          console.log(match, match.translation);
-          then(match.translation);
-          break;
-        }
-      }
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  let response = await axios(translateRequest);
+  for (let i = 0; i < response.data.matches.length; i++) {
+    let match = response.data.matches[i];
+    if (match.segment !== match.translation) {
+      console.log(match, match.translation);
+      return match.translation;
+    }
+  }
 }

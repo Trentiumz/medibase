@@ -51,25 +51,39 @@ export function check(){
     }
 }
 
-function Lang(props){
+async function toLang(text, lang){
     const cookies = new Cookies();
-    const text = props.text;
-    const lang = props.lang;
     const hashVal = text + lang;
-    let [curText, setText] = useState(text);
     let translated = cookies.get("translated");
     if(!translated) translated = {};
     if(lang.startsWith("en")){
-        return (<span>{text}</span>);
+        return text;
     }
 
     if(translated[hashVal]){
-        return (<span>{translated[hashVal]}</span>);
+        return translated[hashVal];
     }
-    translateText(text, lang, (response) => {
-        setText(response);
-        translated[hashVal] = response;
-        cookies.set("translated", translated);
+    
+    let response = await translateText(text, lang)
+
+    translated[hashVal] = response;
+    cookies.set("translated", translated);
+    return response;
+}
+
+export async function toCurLang(text){
+    const profile = getProfile();
+    return await toLang(text, profile.language);
+}
+
+function Lang(props){
+    const text = props.text;
+    const lang = props.lang;
+    let [curText, setText] = useState(text);
+    toLang(text, lang).then(response => {
+        if(curText !== response){
+            setText(response)
+        }
     })
     return (
         <span>{curText}</span>
