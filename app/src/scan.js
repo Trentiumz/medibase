@@ -38,9 +38,9 @@ function GetDIN() {
         <div id="right-column">
           <span class="din-label"><CurLang text="enter DIN:" /></span>
           <div class="din-info"><CurLang text="DIN is the Drug Identification" /><br/><CurLang text="Number on prescription labels." /></div>
-          <form class="input-form" onSubmit="onSubmit">
+          <form class="input-form" onSubmit={onSubmit}>
               <label class="din-input-container">
-                  <input class="din-input" type="number" value="content" onChange="onDinChange" name="din" />
+                  <input class="din-input" type="number" value={content} onChange={onDinChange} name="din" />
               </label>
               <input class="input-submit" type="submit" value="→"/>
           </form>
