@@ -27,8 +27,8 @@ function GetDIN() {
     }
 
     return(
-        <div class="content">
-            <div class="inner-content">
+        <div class="scan-content">
+            <div class="scan-inner-content">
                 <div id="left-column">
                   <div class="scan-container">
                     <div class="scan-placeholder"><p class="scan-placeholder-text"><CurLang text="currently not supported" /></p></div>
