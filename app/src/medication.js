@@ -30,7 +30,7 @@ export default function Medication(){
           <Navbar />  
         <div className="content">
           <div className="inner-content">
-            <p className="error-text"><CurLang text="Oops! Looks like you don't have any medications."/><a className="a-error" href="/search/"><CurLang text="Click here" /></a> <CurLang text="to add some."/></p>
+            <p className="error-text"><CurLang text="Oops! Looks like you don't have any medications. "/><a className="a-error" href="/search/"><CurLang text="Click here" /></a> <CurLang text="to add some."/></p>
             </div>
           </div>
         </div>
