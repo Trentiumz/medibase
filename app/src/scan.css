@@ -123,14 +123,14 @@ img{
 
 
 /* SCAN.CSS */
-#left-column {
+#scan-left-column {
     flex: 5;
     justify-content: flex-end;
     margin-right: 20px;
     display: flex;
   
 }
-#middle-column {
+#scan-middle-column {
     flex: 1;
     vertical-align: middle;
 }
@@ -139,7 +139,7 @@ img{
   text-align: center;
   color: var(--lblue);
 }
-#right-column {
+#scan-right-column {
     margin-left: 20px;
     flex: 5;
 }
