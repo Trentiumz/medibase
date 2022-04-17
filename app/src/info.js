@@ -48,6 +48,7 @@ export function InformationFormat(props){
                 </div>
                 <TTSIcon text={message} lang={getProfile().language}/>
                 <p className = "top-bar-title">{data.brand_name}</p>
+                <p className="info-item">DIN: {data.din}</p>
               </div>
             </div>
             <hr/>
