@@ -51,7 +51,7 @@ export function check(){
     }
 }
 
-async function toLang(text, lang){
+export async function toLang(text, lang){
     const cookies = new Cookies();
     const hashVal = text + lang;
     let translated = cookies.get("translated");

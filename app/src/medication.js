@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {getProfile, setProfile} from "./tools.js";
 import './medication.css';
 import Navbar from './nav-bar.js';
-
+import {CurLang} from "./tools.js"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 import Information from "./info.js";
@@ -38,7 +38,7 @@ export default function Medication(){
           <div className="inner-content">
             <div id="left-column">
               <div id="medication-list-header">
-                <p id="medication-list-header-title">medication</p>
+                <p id="medication-list-header-title"><CurLang text="medication"/></p>
                 <a className="icon-buttons" href="/add">
                   <FontAwesomeIcon id="medication-list-header-icon" icon={faPlus} />
                 </a>

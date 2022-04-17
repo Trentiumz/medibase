@@ -10,8 +10,8 @@ const options = [
     { value: 'en-us', label: 'English (en)' },
     { value: 'es-es', label: 'Español (es)' },
     { value: 'fr-fr', label: 'Français (fr)' },
-    { value: 'zh-hans', label: '简体中文 (zh-hans)' },
-    { value: 'zh-hant', label: '繁體中文 (zh-hant)' },
+    { value: 'zh-cn', label: '简体中文 (zh-cn)' },
+    { value: 'zh-tw', label: '繁體中文 (zh-tw)' },
   ]
   
 
