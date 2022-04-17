@@ -1,0 +1,43 @@
+.a-error{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    color: var(--lblue);
+}
+.a-error:hover {
+    text-decoration: underline;
+}
+  
+.error-text{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 35px;
+    color: var(--dblue);
+  }
+
+.inner-content{
+    height: calc(100% - 150px);
+    height: -moz-calc(100% - 150px);
+    height: -webkit-calc(100% - 150px);
+    display: flex; 
+    vertical-align: middle; 
+    align-items: center;
+    justify-content: center;
+    padding: 75px 125px;
+}
+
+.content{
+    position: absolute;
+    display: table;
+    margin: 0 auto;
+    top: 100px;
+    height: calc(100%-100px);
+    height: -moz-calc(100% - 100px);
+    height: -webkit-calc(100% - 100px);
+    background-image: url("https://media.discordapp.net/attachments/759867023885860934/964904812938412122/Group_5_3.png?width=624&height=664");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}

@@ -9,6 +9,8 @@ import Cookies from "universal-cookie";
 import Information, { InformationFormat } from "./info.js";
 import MakeDINRequests from "./api-calls/drugDatabase.js";
 
+import "./initial-search.css"
+
 export default function InitialSearch() {
   const cookies = new Cookies();
   const {din} = useParams();
@@ -47,10 +49,12 @@ export default function InitialSearch() {
     return (
       <div>
         <Navbar />
-        <div class="din-not-found">
-          <p>DIN not found</p>
-          <p>Please try again</p>
-          <a href="/">Return Home</a>
+        <div className="content">
+            <div className="inner-content">
+                <div className="error-text">
+                    DIN Not Found. Please check that you entered a valid DIN number. <a className="a-error" href="/">Click here</a> to return home.
+                </div>
+            </div>
         </div>
       </div>
     );

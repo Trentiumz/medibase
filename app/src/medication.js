@@ -15,7 +15,7 @@ export default function Medication(){
     if (din === null) {
       return (
         <div>
-          <Navbar />
+          <Navbar />  
         <div className="content">
           <div className="inner-content">
             <p className="error-text"> Oops! Looks like you don't have any medications. <a href="/search/">Click here</a> to add some.</p>

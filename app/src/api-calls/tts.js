@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { toCurLang } from "./tools";
+import { toCurLang } from "../tools";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faVolumeHigh} from '@fortawesome/free-solid-svg-icons'
 

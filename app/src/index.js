@@ -8,6 +8,7 @@ import Search from "./search.js";
 import Homepage from "./home.js";
 import Medication from './medication';
 import PageNotFound from './404';
+import Schedule from './schedule';
 import { check } from './tools';
 import InitialSearch from './initial-search';
 
@@ -27,6 +28,8 @@ root.render(
       <Route exact path="/search" element={<Search />}></Route>
       <Route exact path="/info">
         <Route exact path=":din" element={<InitialSearch />}></Route>
+      </Route>
+      <Route exact path="/schedule" element={<Schedule />}>
       </Route>
       <Route exact path="/medication" element={<Medication />} />
       <Route path="*" element={<PageNotFound/>}/>

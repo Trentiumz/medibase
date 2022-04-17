@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import { useState } from 'react';
 import MakeDINRequests from './api-calls/drugDatabase';
 import Cookies from 'universal-cookie';
-import TTSIcon from './tts';
+import TTSIcon from './api-calls/tts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh, faBellSlash } from '@fortawesome/free-solid-svg-icons'
 import { getProfile, setProfile } from './tools';
