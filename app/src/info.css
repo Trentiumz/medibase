@@ -205,21 +205,7 @@ hr {
   font-size: 16px;
   margin-top: 0;
 }
-.medication-list-item{
-  height: 2.5em;
-  border-radius: 5px;
-  border: solid var(--dblue) 2px;
-  margin: 2px;
-  color: var(--dblue);
-  vertical-align: middle;
-}
-.medication-list-item:hover{
-  background-color: var(--lbluet);
-  cursor: pointer;
-}
-.medication-list-item-text{
-  margin: 11px;
-}
+
 .save-medication-btn{
   border: solid 3px var(--dblue);
   border-radius: 5px;
