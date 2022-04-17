@@ -8,6 +8,7 @@ import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 import Cookies from "universal-cookie";
 import Information, { InformationFormat } from "./info.js";
 import MakeDINRequests from "./api-calls/drugDatabase.js";
+import {CurLang} from "./tools.js"
 
 import "./initial-search.css"
 
@@ -55,7 +56,7 @@ export default function InitialSearch() {
         <div className="content">
             <div className="inner-content">
                 <div className="error-text">
-                    {din} is not a valid DIN number. <a className="a-error" href="/search">Click here</a> to try again.
+                    DIN <CurLang text="Not Found. Please check that you entered a valid" /> DIN <CurLang text="number."/> <a className="a-error" href="/"><CurLang text="click here"/></a> <CurLang text="to return home."/>
                 </div>
             </div>
         </div>
