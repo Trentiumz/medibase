@@ -55,7 +55,7 @@ export default function InitialSearch() {
         <div className="content">
             <div className="inner-content">
                 <div className="error-text">
-                    DIN Not Found. Please check that you entered a valid DIN number. <a className="a-error" href="/">Click here</a> to return home.
+                    DIN Not Found. Please check that you entered a valid DIN number. <a className="a-error" href="/search">Click here</a> to try again.
                 </div>
             </div>
         </div>
