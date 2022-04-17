@@ -7,8 +7,10 @@ import Profile from "./profile.js";
 import Search from "./search.js";
 import Homepage from "./home.js";
 import Medication from './medication';
+import PageNotFound from './404';
 import { check } from './tools';
 import InitialSearch from './initial-search';
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -19,14 +21,15 @@ root.render(
   {/*<Navbar/>*/}
   <Router>
     <Routes>
-      <Route path="/" element={<Homepage />}>
+      <Route exact path="/" element={<Homepage />}>
       </Route>
-      <Route path="/profile" element={<Profile />}></Route>
-      <Route path="/search" element={<Search />}></Route>
-      <Route path="/info">
-        <Route path=":din" element={<InitialSearch />}></Route>
+      <Route exact path="/profile" element={<Profile />}></Route>
+      <Route exact path="/search" element={<Search />}></Route>
+      <Route exact path="/info">
+        <Route exact path=":din" element={<InitialSearch />}></Route>
       </Route>
-      <Route path="/medication" element={<Medication />} />
+      <Route exact path="/medication" element={<Medication />} />
+      <Route path="*" element={<PageNotFound/>}/>
     </Routes>
   </Router>
   </>
