@@ -1,3 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* custom scroll bar! ------------------ */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 15px;
+  padding: 15px;
+  background: rgb(228, 228, 228); 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgrey; 
+  border-radius: 15px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+/* vars -------------------------------- */
+
+:root {
+  --lblue: #89B9E5;
+  --lbluet: rgba(137,185,229,0.15);
+  --dblue: #558FC3;
+  --dbluet: rgba(85,143,195,0.25);
+}
+
+*{
+  font-family: 'Varela Round', sans-serif;
+}
+a{
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+img{
+  display: block;
+  margin: 0;
+}
+#navbar{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100px;
+  width: 100%;
+  display: table; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: background 0.15s ease-out;
+}
+#subnavbarright{
+  display: table-cell; vertical-align: middle;  text-align:right;
+  padding-right: 30px;
+}
+#subnavbarleft{
+  display: table-cell; vertical-align: middle;
+  padding-left: 30px;
+}
+.navbar-subtitle-text{
+  font-size: 22.5px;
+  margin: 10px;
+  color: var(--lblue);
+}
+.nav-underline{
+  background-image: linear-gradient(120deg, var(--dblue) 0%, var(--dblue) 100%);
+  background-repeat: no-repeat;
+  background-size: 90% 0;
+  background-position: 50% 95%;
+  transition: background-size 0.15s ease-out;
+  padding: 5px;
+}
+.nav-underline:hover{
+  background-size: 90% 4%;
+  color: var(--dblue);
+}
+.selected{
+  background-image: linear-gradient(120deg, var(--dblue) 0%, var(--dblue) 100%);
+  background-repeat: no-repeat;
+  background-size: 90% 4%;
+  background-position: 50% 95%;
+  padding: 5px;
+}
+#logo{
+  height: 48px;
+}
+.content{
+  position: absolute;
+  display: table;
+  margin: 0 auto;
+  top: 100px;
+  height: calc(100%-100px);
+  height: -moz-calc(100% - 100px);
+  height: -webkit-calc(100% - 100px);
+  background-image: url("https://media.discordapp.net/attachments/759867023885860934/964904812938412122/Group_5_3.png?width=624&height=664");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
 .inner-content{
   height: calc(100% - 150px);
   height: -moz-calc(100% - 150px);
@@ -9,6 +121,8 @@
   padding: 75px 125px;
 }
 
+
+/* SCAN.CSS */
 #left-column {
     flex: 5;
     justify-content: flex-end;
