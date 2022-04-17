@@ -26,25 +26,27 @@ function GetDIN() {
     }
 
     return(
-        <div>
-            <div id="left-column">
-              <div class="scan-container">
-                <div class="scan-placeholder"><p class="scan-placeholder-text"><CurLang text="currently not supported" /></p></div>
-                <div class="scan-label"><CurLang text="scan QR code" /></div>
-              </div>
-            </div>
-            <div id="middle-column">
-              <p class="small"><CurLang text="OR" /></p>
-            </div>
-            <div id="right-column">
-              <span class="din-label"><CurLang text="enter DIN:" /></span>
-              <div class="din-info"><CurLang text="DIN is the Drug Identification" /><br/><CurLang text="Number on prescription labels." /></div>
-              <form class="input-form" onSubmit={onSubmit}>
-                  <label class="din-input-container">
-                      <input class="din-input" type="number" value={content} onChange={onDinChange} name="din" />
-                  </label>
-                  <input class="input-submit" type="submit" value="→"/>
-              </form>
+        <div class="content">
+            <div class="inner-content">
+                <div id="left-column">
+                  <div class="scan-container">
+                    <div class="scan-placeholder"><p class="scan-placeholder-text"><CurLang text="currently not supported" /></p></div>
+                    <div class="scan-label"><CurLang text="scan QR code" /></div>
+                  </div>
+                </div>
+                <div id="middle-column">
+                  <p class="small"><CurLang text="OR" /></p>
+                </div>
+                <div id="right-column">
+                  <span class="din-label"><CurLang text="enter DIN:" /></span>
+                  <div class="din-info"><CurLang text="DIN is the Drug Identification" /><br/><CurLang text="Number on prescription labels." /></div>
+                  <form class="input-form" onSubmit={onSubmit}>
+                      <label class="din-input-container">
+                          <input class="din-input" type="number" value={content} onChange={onDinChange} name="din" />
+                      </label>
+                      <input class="input-submit" type="submit" value="→"/>
+                  </form>
+                </div>
             </div>
         </div>
     );
