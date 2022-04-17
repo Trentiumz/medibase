@@ -11,7 +11,7 @@ export default function Navbar(){
               <div id="subnavbarright">
                 <a className="navbar-subtitle-text nav-underline" href="/medication"><CurLang text="medication" /></a>
                 <a className="navbar-subtitle-text nav-underline" href="/schedule"><CurLang text="schedule" /></a>
-                <a className="navbar-subtitle-text nav-underline" href="/scan"><CurLang text="scan" /></a>
+                <a className="navbar-subtitle-text nav-underline" href="/search"><CurLang text="search" /></a>
                 <a className="navbar-subtitle-text nav-underline" href="/profile"><CurLang text="profile" /></a>
               </div>
             </nav>

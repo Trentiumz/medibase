@@ -4,11 +4,11 @@ import './index.css';
 import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 
 import Profile from "./profile.js";
-import Scan from "./scan.js";
+import Search from "./search.js";
 import Homepage from "./home.js";
 import Medication from './medication';
 import { check } from './tools';
-import Search from './search';
+import InitialSearch from './initial-search';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -22,9 +22,9 @@ root.render(
       <Route path="/" element={<Homepage />}>
       </Route>
       <Route path="/profile" element={<Profile />}></Route>
-      <Route path="/scan" element={<Scan />}></Route>
+      <Route path="/search" element={<Search />}></Route>
       <Route path="/info">
-        <Route path=":din" element={<Search />}></Route>
+        <Route path=":din" element={<InitialSearch />}></Route>
       </Route>
       <Route path="/medication" element={<Medication />} />
     </Routes>

@@ -39,7 +39,7 @@ export default function Medication(){
             <div id="left-column">
               <div id="medication-list-header">
                 <p id="medication-list-header-title"><CurLang text="medication"/></p>
-                <a className="icon-buttons" href="/add">
+                <a className="icon-buttons" href="/search/">
                   <FontAwesomeIcon id="medication-list-header-icon" icon={faPlus} />
                 </a>
               </div>
