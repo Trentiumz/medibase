@@ -96,7 +96,7 @@ img{
 #logo{
   height: 48px;
 }
-.content{
+.scan-content{
   position: absolute;
   display: table;
   margin: 0 auto;
@@ -110,7 +110,7 @@ img{
   background-position: center;
   width: 100%;
 }
-.inner-content{
+.scan-inner-content{
   height: calc(100% - 150px);
   height: -moz-calc(100% - 150px);
   height: -webkit-calc(100% - 150px);
