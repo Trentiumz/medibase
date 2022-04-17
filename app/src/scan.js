@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {CurLang} from './tools.js';
 import {useNavigate} from "react-router-dom";
 
 import "./scan.css";
@@ -26,8 +27,8 @@ function GetDIN() {
 
     return(
         <div class="scan-right">
-            <span class="din-label">enter DIN:</span>
-            <div class="din-info">DIN is the Drug Identification<br/>Number on prescription labels.</div>
+            <span class="din-label"><CurLang text="enter DIN:" /></span>
+            <div class="din-info"><CurLang text="DIN is the Drug Identification" /><br/><CurLang text="Number on prescription labels." /></div>
             <form class="input-form" onSubmit={onSubmit}>
                 <label class="din-input-container">
                     <input class="din-input" type="number" value={content} onChange={onDinChange} name="din" />

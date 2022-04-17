@@ -31,7 +31,8 @@ export default function Profile() {
                     <p className="feature-text"><CurLang text="Language: " />{language}</p>
                     <Select defaultValue={language} options={options} onChange={(lan) => {
                         setProfile({...current, language: lan.value});
-                        setLanguage(lan.value)
+                        current = getProfile();
+                        setLanguage(lan.value);
                     }}/>
                     <p className="feature-text"><CurLang text="Color-Blind Mode: " /><CurLang text={colorblind ? "Off" : "On"} /></p>
                     <button onClick={() => {
