@@ -63,7 +63,7 @@ export default function Medication(){
               </div>
             </div>
             <div id="right-column">
-              {Information(din)}
+              <Information din={din} />
             </div>
           </div>
         </div>

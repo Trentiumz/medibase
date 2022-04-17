@@ -39,6 +39,7 @@ export default function InitialSearch() {
           last_date_taken: parseInt(new Date().getDate())
       })
       cookies.set("profile", profile);
+      console.warn(profile);
       alert("medication added!");
     }
   }
@@ -59,7 +60,7 @@ export default function InitialSearch() {
         <Navbar />
         <div className='info-content'>
           <div className='info-inner-content'>
-            {InformationFormat(data)}
+            <InformationFormat data={data} />
             <button className="save-medication-btn" value="Save Medication" onClick = {onClick}>Save Medication</button>
           </div>
         </div>

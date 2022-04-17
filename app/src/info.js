@@ -23,7 +23,8 @@ export function InformationFormat(props){
     const data = props.data
     let profile = getProfile();
     const ind = getInd(data.din);
-    const [notif, setNotif] = useState(ind >= 0 ? profile.medication[ind].to_notify : false);
+    const [tmp, setNotif] = useState(false);
+    const notif = ind >= 0 ? profile.medication[ind].to_notify : false;
 
     const message = `${data.brand_name}. Dosage form: ${data.form}. Route of administration: ${data.route}.`;
     console.log(message)
@@ -31,9 +32,9 @@ export function InformationFormat(props){
     function onToggle(){
         if(ind >= 0){
             profile = getProfile();
-            profile.medication[ind].to_notify = !notif;
+            profile.medication[ind].to_notify = !profile.medication[ind].to_notify;
             setProfile(profile);
-            setNotif(!notif);
+            setNotif(!tmp);
         }
     }
 
@@ -74,8 +75,9 @@ export function InformationFormat(props){
     );
 }
 
-export default function Information(din){
+export default function Information(props){
     //const {din} = useParams();
+    const din = props.din;
     const [loading, setLoading] = useState(true);
     const [oldData, setOldData] = useState(null);
     const [data, setData] = useState(null);
