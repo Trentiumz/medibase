@@ -3,27 +3,25 @@ import {useParams} from "react-router-dom";
 import { useState } from 'react';
 import MakeDINRequests from './api-calls/drugDatabase';
 import Cookies from 'universal-cookie';
+import TTSIcon from './tts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
-import TTS from './api-calls/tts';
-import { getProfile, setProfile } from './tools';
+import { getProfile } from './tools';
 
 export function InformationFormat(data){
-    const profile = getProfile();
-    console.log(profile.language);
     console.log(data);
-    const ttsStuff = `${data.brand_name}. Dosage form: ${data.form}. Route of administration: ${data.route}.`;
+
+    const message = `This drug is ${data.brand_name}. It is ingested as a ${data.form}. There are ${data.ingredients.length} ingredients: ${data.ingredients.map((el) => el.strength + ' of ' + el.name + ', ').join(' ')}. The route it takes is ${data.route}`;
+    console.log(message)
 
     return(
         <div id="medication-info" className="rectangles">
             <div className="top-bar">
-              <div class="info-icons">
-                <a className="icon-buttons" href="/add">
+              <div className="info-icons">
+                <div className="icon-buttons" onClick={() => console.log("hi")}>
                   <FontAwesomeIcon id="info-notif-icon" icon={faBell} />
-                </a>
-                <div className="icon-buttons" onClick={() => {TTS({"text": ttsStuff, "lang": profile.language})}}>
-                  <FontAwesomeIcon id="info-tts-icon" icon={faVolumeHigh} />
                 </div>
+                <TTSIcon text={message} lang={getProfile().language}/>
                 <p className = "top-bar-title">{data.brand_name}</p>
               </div>
             </div>

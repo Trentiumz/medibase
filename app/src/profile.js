@@ -6,10 +6,10 @@ import Navbar from './nav-bar.js';
 import Select from 'react-select'
 
 const options = [
-    { value: 'de', label: 'Deutsch (de)' },
+    { value: 'de-de', label: 'Deutsch (de)' },
     { value: 'en-us', label: 'English (en)' },
-    { value: 'es', label: 'Español (es)' },
-    { value: 'fr', label: 'Français (fr)' },
+    { value: 'es-es', label: 'Español (es)' },
+    { value: 'fr-fr', label: 'Français (fr)' },
     { value: 'zh-hans', label: '简体中文 (zh-hans)' },
     { value: 'zh-hant', label: '繁體中文 (zh-hant)' },
   ]
