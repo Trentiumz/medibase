@@ -7,10 +7,17 @@ export default function TTSIcon(props){
     const text = props.text;
     const lang = props.lang;
     const [curText, setText] = useState(text);
-    const [ready, setReady] = useState(false);
+    const [origText, setOrigText] = useState(text);
+    const [ready, setReady] = useState(false)
+
+    if(origText !== text && ready){
+        setReady(false);
+    }
+
     if(!ready){
         toCurLang(text).then(response => {
             setReady(true);
+            setOrigText(text);
             setText(response);
         })
     }
