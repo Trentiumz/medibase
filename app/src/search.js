@@ -35,6 +35,7 @@ export default function Search() {
           medication_name: data.brand_name,
           din: data.din,
           notes: data.descriptor,
+          to_notify: true,
           last_date_taken: parseInt(new Date().getDate())
       })
       cookies.set("profile", profile);
