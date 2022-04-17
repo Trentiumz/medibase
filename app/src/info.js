@@ -12,7 +12,7 @@ import {CurLang} from "./tools.js"
 export function InformationFormat(data){
     console.log(data);
 
-    const message = `This drug is ${data.brand_name}. It is ingested as a ${data.form}. There are ${data.ingredients.length} ingredients: ${data.ingredients.map((el) => el.strength + ' of ' + el.name + ', ').join(' ')}. The route it takes is ${data.route}`;
+    const message = `${data.brand_name}. Dosage form: ${data.form}. Route of administration: ${data.route}.`;
     console.log(message)
 
     return(
