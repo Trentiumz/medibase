@@ -16,7 +16,7 @@ export default function Medication(){
       return (
         <div>
           <Navbar />
-          Oops! Looks like you don't have any medications. <a href="/scan/">Click here</a> to add some.
+          Oops! Looks like you don't have any medications. <a href="/search/">Click here</a> to add some.
         </div>
       )
     }

@@ -42,8 +42,18 @@ export default function InitialSearch() {
       alert("medication added!");
     }
   }
-
-  if(data){
+  if (data && data.error === "DIN not found") {
+    return (
+      <div>
+        <Navbar />
+        <div class="din-not-found">
+          <p>DIN not found</p>
+          <p>Please try again</p>
+          <a href="/">Return Home</a>
+        </div>
+      </div>
+    );
+  } else if (data) {
     return(
       <div>
         <Navbar />

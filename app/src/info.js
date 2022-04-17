@@ -75,14 +75,6 @@ export default function Information(din){
         return (<div>Loading...</div>);
     } else if (!data) {
         return InformationFormat(oldData);
-    } else if (data.error === "DIN not found") {
-        return (
-            <div class="din-not-found">
-                <p>DIN not found</p>
-                <p>Please try again</p>
-                <a href="/">Return Home</a>
-            </div>
-        );
     } else {
         return InformationFormat(data);
     }
