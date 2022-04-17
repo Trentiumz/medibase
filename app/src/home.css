@@ -66,7 +66,7 @@ img{
 #logo{
   height: 48px;
 }
-.content{
+.home-content{
   position: absolute;
   display: table;
   margin: 0 auto;
@@ -84,10 +84,19 @@ img{
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  font-size: 55px;
+  font-size: 5.5vh;
   color: var(--dblue);
+  line-height: 94%;  
 }
-.inner-content{
+.feature-body{
+  padding-top: 15px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3vh;
+  color: var(--lblue);
+}
+.home-inner-content{
   display: table-cell; 
   vertical-align: middle; 
   align-items: center;
