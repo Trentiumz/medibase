@@ -24,7 +24,7 @@ function newProfile(){
     const profile = {
         name: "Example1",
         colorblind: false,
-        language: "en",
+        language: "en-us",
         medication: []
     }
     

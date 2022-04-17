@@ -7,7 +7,7 @@ import Select from 'react-select'
 
 const options = [
     { value: 'de', label: 'Deutsch (de)' },
-    { value: 'en', label: 'English (en)' },
+    { value: 'en-us', label: 'English (en)' },
     { value: 'es', label: 'Español (es)' },
     { value: 'fr', label: 'Français (fr)' },
     { value: 'zh-hans', label: '简体中文 (zh-hans)' },
