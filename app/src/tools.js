@@ -15,7 +15,9 @@ export function getProfile(){
 
 export function setProfile(profile){
     const cookies = new Cookies();
-    cookies.set("profile", profile);
+    cookies.set("profile", profile, {
+        path: "/"
+    });
 }
 
 function newProfile(){
