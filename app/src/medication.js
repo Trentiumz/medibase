@@ -16,7 +16,11 @@ export default function Medication(){
       return (
         <div>
           <Navbar />
-          Oops! Looks like you don't have any medications. <a href="/search/">Click here</a> to add some.
+        <div className="content">
+          <div className="inner-content">
+            <p className="error-text"> Oops! Looks like you don't have any medications. <a href="/search/">Click here</a> to add some.</p>
+            </div>
+          </div>
         </div>
       )
     }
@@ -50,7 +54,7 @@ export default function Medication(){
                       <div key={key}>
                         <button className="medication-list-item" onClick={() => {
                           setDin(el.din);console.log(el.din)}}>
-                          <p className="medication-list-item-text">{el.medication_name}</p>
+                          {el.medication_name}
                         </button>
                       </div>
                     )
