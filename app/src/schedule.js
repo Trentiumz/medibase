@@ -7,9 +7,9 @@ export default function Schedule() {
         <Navbar />
         <div className="content">
             <div className="inner-content">
-                <div className="error-text">
-                <p><CurLang text="Coming Soon!" /></p>    
-                <a className="a-error" href="/"><CurLang text="Click here" /></a> <CurLang text="to return home." />
+                <div>
+                <p className="schedule-body"><CurLang text="Coming Soon! Here's a sneak peek!" /></p>    
+                <img className = "schedule-img" src="https://media.discordapp.net/attachments/960656398478352454/965370611809542174/Group_29.png" alt="schedule mock-up" />
                 </div>
             </div>
         </div>
