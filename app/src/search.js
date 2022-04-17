@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {getProfile, setProfile} from "./tools.js";
-import './medication.css';
+import './info.css';
 import Navbar from './nav-bar.js';
 import {useParams} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,6 +27,7 @@ export default function Search() {
       let profile = cookies.get("profile");
       for(let med of profile.medication){
         if(med.din === data.din){
+          alert("medication already added!");
           return;
         }
       }
@@ -37,6 +38,7 @@ export default function Search() {
           last_date_taken: parseInt(new Date().getDate())
       })
       cookies.set("profile", profile);
+      alert("medication added!");
     }
   }
 
@@ -44,9 +46,11 @@ export default function Search() {
     return(
       <div>
         <Navbar />
-        <div class='search-info-body'>
-          {InformationFormat(data)}
-          <button value="Save Medication" onClick = {onClick}>Save Medication</button>
+        <div className='info-content'>
+          <div className='info-inner-content'>
+            {InformationFormat(data)}
+            <button className="save-medication-btn" value="Save Medication" onClick = {onClick}>Save Medication</button>
+          </div>
         </div>
     </div>
     );

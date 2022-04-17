@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 import { getProfile } from './tools';
 import {CurLang} from "./tools.js"
+import "./info.css";
 
 export function InformationFormat(data){
     console.log(data);
@@ -16,7 +17,8 @@ export function InformationFormat(data){
     console.log(message)
 
     return(
-        <div id="medication-info" className="rectangles">
+
+          <div id="medication-info" className="rectangles">
             <div className="top-bar">
               <div className="info-icons">
                 <div className="icon-buttons" onClick={() => console.log("hi")}>
@@ -48,6 +50,7 @@ export function InformationFormat(data){
               </div>
             </div>
         </div>
+
     );
 }
 
