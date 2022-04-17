@@ -38,11 +38,11 @@ export function check(){
     let profile = getProfile();
     for(let ind = 0; ind < profile.medication.length; ind++){
         const med = profile.medication[ind]
-        if(parseInt(med.last_date_taken) !== parseInt(cur_date)){
+        if(parseInt(med.last_date_taken) !== parseInt(cur_date) && med.to_notify){
             Notifier.start(`Remember to take your ${med.medication_name}!`, `Remember to take ${med.medication_name} daily`, "www.google.com", "https://i.pinimg.com/originals/19/65/4c/19654c67417f65bf121984fe99c33ec1.png")
-            profile.medication[ind].last_date_taken = parseInt(cur_date)
-            setProfile(profile);
         }
+        profile.medication[ind].last_date_taken = parseInt(cur_date)
+        setProfile(profile);
     }
 }
 
