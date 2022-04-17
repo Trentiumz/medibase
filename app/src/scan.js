@@ -26,6 +26,7 @@ function GetDIN() {
     }
 
     return(
+        <>
         <div id="left-column">
           <div class="scan-container">
             <div class="scan-placeholder"><p class="scan-placeholder-text"><CurLang text="currently not supported" /></p></div>
@@ -45,6 +46,7 @@ function GetDIN() {
               <input class="input-submit" type="submit" value="→"/>
           </form>
         </div>
+        </>
     );
 }
 
