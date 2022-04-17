@@ -16,12 +16,7 @@ export default function Medication(){
       return (
         <div>
           <Navbar />
-          Oops! Looks like you don't have any medications. Add one by clicking the button below.
-          <div className="add-button-container">
-            <a className="add-button" href="/scan">
-              <FontAwesomeIcon icon={faPlus} />
-            </a>
-          </div>
+          Oops! Looks like you don't have any medications. <a href="/scan/">Click here</a> to add some.
         </div>
       )
     }

@@ -31,6 +31,14 @@ export default function Information(din){
 
     if (!data) {
         return (<div>Loading...</div>);
+    } else if (data.error === "DIN not found") {
+        return (
+            <div class="din-not-found">
+                <p>DIN not found</p>
+                <p>Please try again</p>
+                <a href="/">Return Home</a>
+            </div>
+        );
     } else {
         return(
             <div id="medication-info" className="rectangles">
