@@ -31,7 +31,7 @@ function GetDIN() {
             <div class="scan-inner-content">
                 <div id="scan-left-column">
                   <div class="scan-container">
-                    <div class="scan-placeholder"><p class="scan-placeholder-text"><CurLang text="currently not supported" /></p></div>
+                    <div class="scan-placeholder"><p class="scan-placeholder-text"><CurLang text="coming soon!" /></p></div>
                     <div class="scan-label"><CurLang text="scan QR code" /></div>
                   </div>
                 </div>
