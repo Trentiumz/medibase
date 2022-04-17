@@ -34,7 +34,7 @@ export default function Medication(){
      *      notes: ,
      * }]
      */
-
+    console.log(medication);
     return(
       <div>
         <Navbar />

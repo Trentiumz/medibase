@@ -33,6 +33,7 @@ export default function InitialSearch() {
           return;
         }
       }
+      console.log(profile);
       profile.medication.push({
           medication_name: data.brand_name,
           din: data.din,
@@ -42,6 +43,8 @@ export default function InitialSearch() {
       })
       setProfile(profile);
       console.warn(profile);
+      cookies.set("profile", profile);
+      console.log(profile);
       alert("medication added!");
     }
   }
