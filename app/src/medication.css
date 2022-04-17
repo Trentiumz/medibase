@@ -219,17 +219,32 @@ hr {
   margin-top: 0;
 }
 .medication-list-item{
-  height: 2.5em;
   border-radius: 5px;
   border: solid var(--dblue) 2px;
   margin: 2px;
   color: var(--dblue);
   vertical-align: middle;
+  min-width: calc(100% - 4px);
+  min-width: -moz-calc(100% - 4px);
+  min-width: -webkit-calc(100% - 4px);
+  text-align: left;
+  padding: 10px;
+  height: 100%;
+  background:none;
 }
+
 .medication-list-item:hover{
   background-color: var(--lbluet);
   cursor: pointer;
 }
 .medication-list-item-text{
   margin: 11px;
+  flex: 1;
+}
+.error-text{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 35px;
+  color: var(--dblue);
 }
