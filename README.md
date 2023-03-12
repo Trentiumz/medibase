@@ -1,6 +1,6 @@
 # MediBase
 
-MediBase is a medication assistant allowing people who have poorer eyesight, don’t understand English well, or have trouble remembering - to safely take medication.
+MediBase is a medication assistant allowing people who have poorer eyesight, language barriers, or are forgetful - to safely take medication.
 
 ## to use:
 1. clone using `git clone https://github.com/Trentiumz/medibase`
