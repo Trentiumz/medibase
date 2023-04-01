@@ -9,6 +9,7 @@ import { faPlus, faTimes, faBell, faVolumeHigh, faBellSlash } from '@fortawesome
 import { getProfile, setProfile } from './tools';
 import {CurLang} from "./tools.js"
 import "./info.css";
+import Notifier from "react-desktop-notification";
 
 function getInd(din){
     for(let ind = 0; ind < getProfile().medication.length; ind++){
@@ -28,7 +29,7 @@ export function InformationFormat(props){
     const [tmp, setNotif] = useState(false);
     const notif = (ind >= 0 && x) ? profile.medication[ind].to_notify : false;
 
-    const message = `${data.brand_name}. Dosage form: ${data.form}. Route of administration: ${data.route}.`;
+    const message = `${data.brand_name}. Instructions: ${data.instructions}. Dosage form: ${data.form}. Route of administration: ${data.route}.`;
     console.log(message)
 
     function onToggle(){
@@ -58,6 +59,11 @@ export function InformationFormat(props){
             <hr/>
             <div className="medication-info-body">
               <div className="inner-medication-info-body">
+              <p className="info-description">for <b>{data.patient_name}</b>, prescribed by <b>{data.doctor_name}</b> on <b>{data.prescribed_date}</b></p>
+              <p className="info-item"><CurLang text="Quantity Dispensed"/>:</p>
+              <p className="info-description"><CurLang text={data.quantity_dispensed}/></p>
+              <p className="info-item"><CurLang text="Instructions"/>:</p>
+              <p className="info-description"><CurLang text={data.instructions}/></p>
                 <p className="info-item"><CurLang text="Company"/>:</p>
                 <p className="info-description">{data.company_name}</p>
                 <p className="info-item"><CurLang text="Active Ingredients"/>:</p>
@@ -88,23 +94,26 @@ export default function Information(props){
     const [oldData, setOldData] = useState(null);
     const [data, setData] = useState(null);
 
-
+    console.log(data,din);
     if (!loading && data !== null && data.din !== din) {
         setLoading(true);
         setOldData(data);
         setData(null);
     }
     if (loading) {
-        MakeDINRequests(din).then(response => {
+        const temp = [props.din.patient_name,props.din.prescribed_date,props.din.doctor_name,props.din.din,props.din.quantity_dispensed,props.din.instructions];
+        console.log(temp);
+        MakeDINRequests(temp).then(response => {
             setData(response);
         });
         setLoading(false);
+        //setData(null);
     }
 
     if (!data && !oldData) {
         return (<div>Loading...</div>);
     } else if (!data) {
-        return <InformationFormat data={oldData} />;
+        return <InformationFormat data={oldData} x={true}/>;
     } else if (data.error === "DIN not found") {
         return (
             <div class="din-not-found">
@@ -114,6 +123,6 @@ export default function Information(props){
             </div>
         );
     } else {
-        return <InformationFormat data={data} x={true} onclickX={props.deleteSave}/>;
+        return <InformationFormat data={din} x={true} onclickX={props.deleteSave}/>;
     }
 }

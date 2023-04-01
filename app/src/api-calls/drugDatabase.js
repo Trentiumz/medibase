@@ -6,17 +6,24 @@ const DINRequest = {
   url: 'https://health-products.canada.ca/api/drug/'
 };
 
-export default async function MakeDINRequests(din) {
+export default async function MakeDINRequests(input) {
+    console.log("!!!!!!!!!!!!" + input);
     var ret = {"error": "none"};
+    ret["patient_name"] = input[0];
+    ret["prescribed_date"] = input[1];
+    ret["doctor_name"] = input[2];
+    ret["din"] = input[3];
+    ret["quantity_dispensed"] = input[4];
+    ret["instructions"] = input[5];
 
     // get the base information using DIN
-    DINRequest.url = `https://health-products.canada.ca/api/drug/drugproduct/?lang=en&type=json&din=${din}`;
+    DINRequest.url = `https://health-products.canada.ca/api/drug/drugproduct/?lang=en&type=json&din=${input[3]}`;
     await axios(DINRequest).then(response => {
         if (response.data.length === 0) {
             ret["error"] = "DIN not found";
             return;
         }
-        ret["din"] = din;
+
         ret["drug_code"] = response.data[0].drug_code;
         ret["class_name"] = response.data[0].class_name;
         ret["company_name"] = response.data[0].company_name;
