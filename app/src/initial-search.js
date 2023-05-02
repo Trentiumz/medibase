@@ -19,7 +19,7 @@ export default function InitialSearch() {
   const [data, setData] = useState(null);
 
   if (loading) {
-      MakeDINRequests(din.split(";")).then(response => {
+      MakeDINRequests(din).then(response => {
           setData(response);
       });
       setLoading(false);
@@ -38,15 +38,8 @@ export default function InitialSearch() {
       profile.medication.push({
           medication_name: data.brand_name,
           din: data.din,
-          patient_name: data.patient_name,
-          prescribed_date: data.prescribed_date,
-          doctor_name: data.doctor_name,
-
-          quantity_dispensed: data.quantity_dispensed,
-          instructions: data.instructions,
           notes: data.descriptor,
           to_notify: true,
-
           last_date_taken: parseInt(new Date().getDate())
       })
       setProfile(profile);

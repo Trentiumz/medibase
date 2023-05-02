@@ -75,7 +75,7 @@ export default function Medication(){
               </div>
             </div>
             <div id="right-column">
-              <Information din={medication[0]} deleteSave={deleteSave}/>
+              <Information din={din} deleteSave={deleteSave}/>
             </div>
           </div>
         </div>
