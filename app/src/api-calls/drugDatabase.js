@@ -15,6 +15,7 @@ export default async function MakeDINRequests(input) {
     ret["din"] = input[3];
     ret["quantity_dispensed"] = input[4];
     ret["instructions"] = input[5];
+    ret["warnings"] = input[6];
 
     // get the base information using DIN
     DINRequest.url = `https://health-products.canada.ca/api/drug/drugproduct/?lang=en&type=json&din=${input[3]}`;

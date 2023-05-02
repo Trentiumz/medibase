@@ -44,6 +44,7 @@ export default function InitialSearch() {
 
           quantity_dispensed: data.quantity_dispensed,
           instructions: data.instructions,
+          warnings: data.warnings,
           notes: data.descriptor,
           to_notify: true,
 

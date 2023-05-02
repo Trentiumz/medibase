@@ -123,7 +123,7 @@ img{
 
 /* SCAN.CSS */
 #scan-left-column {
-    flex: 5;
+    flex: 1;
     justify-content: flex-end;
     margin-right: 20px;
     display: flex;
@@ -140,7 +140,7 @@ img{
 }
 #scan-right-column {
     margin-left: 20px;
-    flex: 5;
+    flex: 1;
 }
 
 .din-label {
